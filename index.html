@@ -1,0 +1,606 @@
+<!doctype html>
+<!-- 
+This publication template is based on the one created by Andrew G York:
+https://github.com/AndrewGYork/publication_template . Thanks Andrew!
+
+Based on this theme: https://github.com/broccolini/dinky , which mentioned that 
+attribution is appreciated. Thanks, broccolini!
+-->
+<html lang="en">
+  <head>
+    <base target="_blank">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="citation_title" content="Instant dual-view Snouty (iDV-Snouty) light-sheet microscopy">
+    <meta name="citation_author" content="Alfred Millett-Sikking">
+	
+	<!-- TODO: update the date etc -->
+	
+    <meta name="citation_publication_date" content="2025/12/11">
+    <meta name="citation_journal_title" content="Github.io">
+    <meta name="citation_pdf_url" content=
+	"https://amsikking.github.io/idv-snouty_light-sheet_microscopy/idv-snouty_light-sheet_microscopy.pdf">
+    <title>iDV-Snouty_light-sheet_microscopy</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/prism.css">
+    <script src="javascript/python-highlighting/prism.js"></script>
+    <script async src="javascript/Minimal-MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
+    <script src="javascript/update_figures.js"></script>
+    <script src="javascript/reference_list/reference_list.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">iDV-Snouty light-sheet microscopy</h1>
+        <ul>
+          <li class="download"><a class="buttons" 
+		  href="https://github.com/amsikking/idv-snouty_light-sheet_microscopy/zipball/master">Download ZIP</a></li>
+          <li><a class="buttons github" 
+		  href="https://github.com/amsikking/idv-snouty_light-sheet_microscopy">View On GitHub</a></li>
+          <li><a class="buttons pdf" 
+		  href="./idv-snouty_light-sheet_microscopy.pdf">Download PDF</a></li>
+        </ul>
+        <p class="header">This project is maintained by 
+		<a class="header name" href="https://amsikking.github.io/">amsikking</a> from 
+		
+		<!-- TODO: update group website -->
+		
+		<!-- <a class="header name" href="https://amsikking.github.io/">Calico Automation</a>, and was funded by  -->
+		Calico Automation, and was funded by 
+		<a class="header name" href="https://www.calicolabs.com/">Calico Life Sciences LLC</a></p>
+      </header>
+<!-- 
+##############################################################
+The real text begins here.
+##############################################################
+ -->
+<section>
+<h1>Research article</h1>
+<h3 class="onlyprint">
+Note that this is a limited PDF or print version; animated and interactive figures are disabled. For the full version of this article, please visit one of the following links: 
+<a href="https://amsikking.github.io/idv-snouty_light-sheet_microscopy">
+https://amsikking.github.io/idv-snouty_light-sheet_microscopy</a>
+</h3>
+<noscript>
+<h3>Your browser doesn't seem to support Javascript. This document uses Javascript for interactive figures, math typesetting, and to automatically generate the reference list. Either activate Javascript, or use the "Download PDF" link above if you want properly typeset math and a reference list.</h3>
+</noscript>
+<h2>Instant dual-view Snouty (iDV-Snouty) light-sheet microscopy</h2>
+<p class="author_list">Alfred Millett-Sikking<sup>*</sup></p>
+<p class="author_affiliations">Calico Life Sciences LLC, South San Francisco, CA 94080, USA</p>
+<p class="contact_email"><sup>*</sup>
+Institutional email:
+<a href="mailto:amsikking+iDV-Snouty@calicolabs.com" target="_self">
+amsikking+iDV-Snouty@calicolabs.com</a>
+; Permanent email: 
+<a href="mailto:amsikking+iDV-Snouty@gmail.com" target="_self">
+amsikking+iDV-Snouty@gmail.com</a></p>
+
+<h3>Abstract</h3>
+<p class="abstract">
+Light-sheet fluorescence microscopy (LSFM) has emerged as a leading technology for fast and gentle 3D bioimaging, but traditional implementations are not compatible with standard samples or microscopes. Oblique plane microscopy (OPM) is an attractive variant of LSFM that avoids orthogonal objectives at the sample, but has a diminished numerical aperture (NA). Snouty light-sheet microscopy improves on OPM by using a special glass tipped objective (e.g. AMS-AGY v1) and a carefully selected optical train to retain the maximum NA. A common challenge in LSFM is overcoming sample induced image artifacts from refraction, scattering and absorption of the light-sheet and emission light. A multi-view approach can alleviate image artifacts and was used by the dOPM and DaXi microscopes in a dual-view regime. The DaXi microscope used the AMS-AGY v2 objective to achieve a larger field of view (FOV), and targeted larger samples where image artifacts are more pronounced. Both dOPM and DaXi used additional optics in series and moving parts to realize the dual-view mode, reducing transmission efficiency and lowering acquisition rates. Here we show a new instant dual-view Snouty (iDV-Snouty) light-sheet microscope design with no additional optics in series or moving parts, and a volumetric acquisition rate that approaches double that of previous methods. The new arrangement allows single-view Snouty microscopes to be upgraded to iDV-Snouty without compromise, offering a strict technical upgrade to a standard system. We present the basic theory and a current example design that uses all stock parts (NA 0.6) and an improved design with a newly proposed ‘dual-grind’ AMS-AGY v3 objective to achieve a system NA of 1.0. Both designs have orthogonal dual-views with a FOV up to 830 \(\times\) 1100 \(\times\) 306 &mu;m (X \(\times\) Y \(\times\) Z) \(\times\) 2 views.
+</p>
+
+<figure id="visual_abstract">
+<img src="figures/visual_abstract.jpg" alt="visual abstract" id="fig_arrangement_img" style="width:100%;">
+<figcaption>
+<strong>Visual abstract: An overview of the instant dual-view Snouty (iDV-Snouty) light-sheet microscope. We show the example design with NA 1.0 and 2 instances of the newly proposed <a href="#dual_grind_snouty" target="_self"><strong>‘dual-grind’ AMS-AGY v3</strong></a> objective. The essential optical elements are shown (mechanics are not included).</strong>
+</figcaption>
+</figure>
+
+<h4>Intended audience</h4>
+<p class="abstract">R&D engineers, microscope users, builders and developers.</p>
+
+<h4>Peer review status</h4>
+<p class="abstract">First published: XXX January 5, 2026 (This article is not yet peer-reviewed)</p>
+<p class="abstract">Cite as: <a href="XXXhttps://doi.org/10.5281/zenodo.18155241">XXXdoi:10.5281/zenodo.18155241</a></p>
+
+<h3 id="intro">Introduction</h3>
+
+<p>
+Light-sheet fluorescence microscopy (LSFM) has emerged as a leading technology for fast and gentle 3D imaging of biological samples
+[<a class="citation" href="https://doi.org/10.1088/2040-8986/aab58a" 
+title="The light-sheet microscopy revolution; J M. Girkin and M. T. Carvalho; J. Opt., vol 20-5, p20, (2018)">Girkin 2018</a>]
+. In traditional LSFM there are two objectives near the sample, one objective to deliver the light-sheet and another orthogonal objective to image the fluorescent plane created by the light-sheet
+[<a class="citation" href="https://doi.org/10.1126/science.1100035" 
+title="Optical sectioning deep inside live embryos by selective plane illumination microscopy; J. Huisken, J. Swoger, F. D. Bene, J. Wittbrodt, E. H. K. Stelzer; Science, vol 305-5686, p1007-1009, (2004)">Huisken 2004</a>]
+. A major drawback of traditional LSFM is that the orthogonal objective arrangement is not compatible with standard samples like slides, dishes, multi-well plates and microfluidic devices, or with standard microscope platforms like epi-fluorsecent widefield microscopes.
+</p>
+<p>
+Oblique plane microscopy (OPM) is a special variant of LSFM that uses only one objective near the sample
+[<a class="citation" href="https://doi.org/10.1364/OE.16.020306" 
+title="Optically sectioned imaging by oblique plane microscopy; C. Dunsby; Opt. Express, vol 16-25, p20306-20316, (2008)">Dunsby 2008</a>]
+. In OPM the primary objective is used with some extra downstream optics to simultaneously deliver a light-sheet to the sample and image the fluorescence emission on an ‘oblique’ plane. Because OPM is fully compatible with standard samples and microscope platforms it offers LSFM in a convenient format and has seen many recent advances
+[<a class="citation" href="https://doi.org/10.1515/nanoph-2023-0002" 
+title="Recent advances in oblique plane microscopy; J. Kim; Nanophotonics, vol 12-13, p2317-2334, (2023)">Kim 2023</a>].
+</p>
+<p>
+The downstream optics in OPM are based on remote refocus (RR) optics
+[<a class="citation" href="https://doi.org/10.1016/j.optcom.2007.10.007" 
+title="An optical technique for remote focusing in microscopy; E.J. Botcherby, R. Juškaitis, M.J. Booth and T. Wilson; Optics Communications, vol 281(4), p880-887, (2007)">Botcherby 2007</a>]
+, which create a remote 3D image of the sample with a pair of axially aligned microscopes (M1 and M2). In a traditional RR the 3D image is then collected as a series of 2D images by a 3rd microscope (M3) that is also axially aligned
+[<a class="citation" href="https://doi.org/10.5281/zenodo.1146083" 
+title="Remote refocus enables class-leading spatiotemporal resolution in 4D optical microscopy; A. Millett-Sikking, N.H. Thayer, A. Bohnert and A.G. York; (2018)">Millett-Sikking 2018</a>]
+. In OPM M3 is intentionally tilted away from the optical axis in order to image an oblique plane in the remote 3D image, and therefore an oblique plane in the sample where a light-sheet can be delivered. Tilting M3 in the remote space is what enables OPM but has the unwanted side effect of losing light between M2 and M3, since they are no longer axially aligned and light simply exits the optical train at this interface. In practice, this means that OPM operates at a lower effective numerical aperture (NA) and has a reduced resolution and signal compared to a stand alone microscope (i.e. M1).
+</p>
+
+<p>
+To alleviate the loss of light in OPM a special glass tipped ‘Snouty’ objective (e.g. <a href="https://doi.org/10.5281/zenodo.14339988">AMS-AGY v1</a>) can be used with a carefully selected optical train to retain the maximum NA
+[<a class="citation" href="https://doi.org/10.5281/zenodo.3244420" 
+title="High NA single-objective light-sheet; A. Millett-Sikking, K.M. Dean, R. Fiolka, A. Fardad, L. Whitehead and A.G. York; (2019)">Millett-Sikking 2019</a>,
+<a class="citation" href="https://doi.org/10.7554/eLife.57681" 
+title="A versatile oblique plane microscope for large-scale and high-resolution imaging of subcellular dynamics; E. Sapoznik, B. Chang, J. Huh, R.J. Ju, E.V. Azarova, T. Pohlkamp, E.S. Welf, D. Broadbent, A.F. Carisey, S.J. Stehbens, K. Lee, A. Marín, A.B. Hanker, J.C. Schmidt, C.L. Arteaga, B. Yang, Y. Kobayashi, P.R. Tata, 
+R. Kruithoff, K. Doubrovinski, D.P. Shepherd, A. Millett-Sikking, A.G. York, K.M. Dean and R.P. Fiolka; eLife 9:e57681, (2020)">E. Sapoznik 2020</a>]
+. Snouty light-sheet microscopy has seen significant uptake (e.g. <a href="https://doi.org/10.5281/zenodo.14861825">Snoutclub</a>), including structured illumination
+[<a class="citation" href="https://doi.org/10.1038/s41592-022-01635-8" 
+title="Resolution doubling in light-sheet microscopy via oblique plane structured illumination; B. Chen, B. Chang, P. Roudot, F. Zhou, E. Sapoznik, M. Marlar-Pavey, J. B. Hayes, P. T. Brown, C. Zeng, T. Lambert, J. R. Friedman, C. Zhang, D. T. Burnette, D. P. Shepherd, K. M. Dean and R. P. Fiolka; Nat. Methods, vol 19, p1419–1426, (2022)">Chen 2022</a>]
+, adaptive optics
+[<a class="citation" href="https://doi.org/10.1364/BOE.524013" 
+title="Adaptive optics in an oblique plane microscope; C. Mcfadden, Z. Marin, B. Chen, S. Daetwyler, X. Wang, D. Rajendran, K. M. Dean and R. Fiolka; Biomed. Opt. Express, vol 15, p4498-4512, (2024)">Mcfadden 2024</a>]
+, super resolution
+[<a class="citation" href="https://doi.org/10.1038/s41592-024-02196-8" 
+title="Super-sectioning with multi-sheet reversible saturable optical fluorescence transitions (RESOLFT) microscopy; A. Bodén, D. Ollech, A. G. York, A. Millett-Sikking & I. Testa; Nat. Methods, vol 21, p882–888, (2024)">Boden 2024</a>]
+ and multi-immersion variants
+[<a class="citation" href="https://doi.org/10.1101/2025.10.04.680473" 
+title="Multi-immersion Oblique Plane Microscope (miOPM): A reconfigurable platform for high-resolution Light-Sheet Fluorescence Microscopy; B. Chen, A. Millett-Sikking, S. Gałecki, S. Daetwyler, J. Jiou, J. Monistrol, Q. Shen, F. Zhou, H. Lin, E. Jenkins, M. C. Stein, M. Marlar-Pavey, G. Sturm, A. L. Li, Q. Tang, B. Feng, U. Diaz, Y. Chen, A. Shalizi, A. Gillich, J. R. Friedman, R. Tomer, B. Chang, W. F. Marshall, S. Shahmoradian, K. M. Dean and R. Fiolka; bioRxiv, ID 2025.10.04.680473, (2025)">Chen 2025</a>]
+. In all versions, maximizing the instantaneous field of view (FOV) for a given NA is a primary figure of merit for the microscope design, which led to the development of a large FOV <a href="https://doi.org/10.5281/zenodo.14342897">AMS-AGY v2</a> objective for the DaXi microscope
+[<a class="citation" href="https://doi.org/10.1038/s41592-022-01417-2" 
+title="DaXi—high-resolution, large imaging volume and multi-view single-objective light-sheet microscopy; B. Yang, M. Lange, A. Millett-Sikking, X. Zhao, J. Bragantini, S. VijayKumar, M. Kamb, R. Gómez-Sjöberg, A.C. Solak, W. Wang, H. Kobayashi, M.N. McCarroll, L.W. Whitehead, R.P. Fiolka, T.B. Kornberg, A.G. York and L.A. Royer; Nat. Methods, vol 19, p461–469, (2022)">Yang 2022</a>].
+</p>
+<p>
+A common challenge in LSFM is overcoming sample induced refraction, scattering and absorption of the light-sheet that often leads to striping or shadowing artifacts in the image
+[<a class="citation" href="https://doi.org/10.1038/nmeth.4224" 
+title="A guide to light-sheet fluorescence microscopy for multiscale imaging; R. M. Power and J. Huisken; Nat. Methods, vol 14, p360–373, (2017)">Power 2017</a>]
+. An effective way to alleviate shadowing artifacts is to use multi-directional light-sheets
+[<a class="citation" href="https://doi.org/10.1364/OL.32.002608" 
+title="Even fluorescence excitation by multidirectional selective plane illumination microscopy (mSPIM); Opt. Lett., vol 32, p2608-2610, (2007)">Huisken 2007</a>]
+with multiple views
+[<a class="citation" href="https://doi.org/10.1038/nmeth.2062" 
+title="Quantitative high-speed imaging of entire developing embryos with simultaneous multiview light-sheet microscopy; Nat. Methods, vol 9, p755–763, (2012)">Tomer 2012</a>] 
+and fuse the images in post processing. A dual-view version of this approach was used in the dOPM
+[<a class="citation" href="https://doi.org/10.1364/BOE.409781" 
+title="Dual-view oblique plane microscopy (dOPM); Biomed. Opt. Express, vol 11, p7204-7220, (2020)">Sparks 2020</a>] 
+and DaXi microscopes, where 2 orthogonal views were collected with light-sheets, all within the same primary objective. In both dOPM and DaXi additional optics in series and extra time were needed to achieve the dual-view mode, reducing transmission efficiency and lowering acquisition rates.
+</p>
+<p>
+Here we show a new instant dual-view Snouty (iDV-Snouty) light-sheet microscope design with no additional optics in series and a volumetric acquisition rate that approaches double that of previous methods (<a href="#fig_idv_snouty" target="_self">Figure 1</a>). The method allows single-view Snouty light-sheet microscopes to be upgraded to iDV without compromise, offering a strict technical upgrade to a standard system. We present the basic <a href="#theory" target="_self">theory</a> and a large FOV <a href="#example_design" target="_self">example design</a> where the iDV mode is most attractive; a current version with the latest ‘250 &mu;m grind’ <a href="https://doi.org/10.5281/zenodo.19596518">AMS-AGY v3</a> objective and an improved version with a newly proposed <a href="#dual_grind_snouty" target="_self">‘dual-grind’ AMS-AGY v3</a> objective.
+</p>
+
+<figure id="fig_idv_snouty">
+<img src="figures/idv_snouty.png" alt="idv snouty" id="idv_snouty_img" style="width:100%;">
+<figcaption>
+<strong>Figure 1: Instant dual-view Snouty (iDV-Snouty) light-sheet microscopy.</strong>
+This figure shows the <strong>M1</strong> and <strong>M2</strong> microscope pair that create the <strong>remote 3D image</strong> of the sample at the output of M2. The remote 3D image is then imaged by the <strong>M3</strong> and <strong>M4</strong> microscopes with a set <strong>tilt</strong> to create views <strong>V1</strong> and <strong>V2</strong> which image a tilted plane in the sample. Light-sheets <strong>LS1</strong> and <strong>LS2</strong> excite the tilted image planes of V1 and V2 to create the iDV-Snouty light-sheet microscopy regime.
+</figcaption>
+</figure>
+<p></p>
+
+<h3 id="theory">Theory</h3>
+<p>
+iDV-Snouty light-sheet microscopy is a straightforward concept; take a regular Snouty light-sheet microscope
+[<a class="citation" href="https://doi.org/10.5281/zenodo.3244420" 
+title="High NA single-objective light-sheet; A. Millett-Sikking, K.M. Dean, R. Fiolka, A. Fardad, L. Whitehead and A.G. York; (2019)">Millett-Sikking 2019</a>]
+and duplicate the 3rd microscope (M3) to create a 4th microscope (M4) which shares the remote 3D image produced by the first 2 microscopes (M1 and M2). M3 and M4 can each image a tilted plane in the sample simultaneously and dual light-sheets can be simultaneously delivered on these image planes (<a href="#fig_iDV_Snouty" target="_self">Figure 1</a>). The rest of this section explores how this arrangement can work and how to optimize it, with subsections on <a href="#single_view_snouty_basics" target="_self">single-view Snouty basics</a>, <a href="#choosing_O1" target="_self">choosing the primary objective (O1)</a>, <a href="#constraints_on_na" target="_self">constraints on numerical aperture (NA)</a>, <a href="#preserving_sbp" target="_self">preserving space-bandwidth product (SBP)</a>, <a href="#constraints_on_fov" target="_self">constraints on field of view (FOV)</a>, <a href="#lateral_shift_for_dv" target="_self">lateral shift for dual-view</a>, <a href="#3d_acquisition_rate_boost" target="_self">3D acquisition rate boost</a> and <a href="#axial_sample_position_regimes" target="_self">axial sample position regimes</a>.
+</p>
+<p>
+More practically minded readers can skip the theory and go straight to the <a href="#example_design" target="_self">example design</a>.
+</p>
+
+<h4 id="single_view_snouty_basics">Single-view Snouty basics</h4>
+<p>
+At a high level a regular Snouty light-sheet microscope is made from 3 microscopes in series; M1, M2 and M3. Each microscope has an objective (O) and a tube lens (TL) pair; O1-TL1 for M1, TL2-O2 for M2 and O3-TL3 for M3 (<a href="#fig_single_view_snouty_na_and_fov" target="_self">Figure 2</a>). M1 and M2 are configured in a special back-to-back arrangement (O1-TL1-TL2-O2) that is based on remote refocus (RR) optics, which collect light from the sample at O1 and create a remote 3D image of the sample at O2
+[<a class="citation" href="https://doi.org/10.1016/j.optcom.2007.10.007" 
+title="An optical technique for remote focusing in microscopy; E.J. Botcherby, R. Juškaitis, M.J. Booth and T. Wilson; Optics Communications, vol 281(4), p880-887, (2007)">Botcherby 2007</a>]
+. A critical feature of RR is that the remote 3D image has a uniform magnification in all directions, specifically the magnification of the remote space \(\text{M}_{\text{RR}}\) should be set to:
+
+\[ \text{M}_{\text{RR}} = \frac{n_s}{n_2} \tag{1} \]
+
+where \(n_s\) is the refractive index of the sample and \(n_2\) is the refractive index of the remote 3D image formed at O2
+[<a class="citation" href="https://doi.org/10.5281/zenodo.7425649" title="Any immersion remote refocus (AIRR) microscopy; A. Millett-Sikking; (2022)">Millett-Sikking 2022</a>]
+. In practice O2 is an air objective (\(n_2 = 1\)) and \(n_s\) is usually limited to the useful biological range of ~1.33 to ~1.51 (i.e. watery to oily) and so the remote 3D image has low magnification (i.e. ~1.33&ndash;1.51x). Due to the low value of M<sub>RR</sub> a 3rd microscope (M3) is used to re-image the remote space and magnify it by an appropriate amount for detection (i.e. to match camera pixel size for Nyquist sampling).
+</p>
+
+<figure id="fig_single_view_snouty_na_and_fov">
+<img src="figures/single_view_snouty_na_and_fov.png" alt="single view snouty na and fov" id="single_view_snouty_na_and_fov_img" style="width:100%;">
+<figcaption>
+<strong>Figure 2: Single-view Snouty light-sheet microscope numerical aperture (NA) and field of view (FOV).</strong>
+This figure shows a regular single-view Snouty light-sheet microscope with view <strong>V1</strong>. We label the objectives (<strong>O1</strong>, <strong>O2</strong> and <strong>O3</strong>) and tube lenses (<strong>TL1</strong>, <strong>TL2</strong> and <strong>TL3</strong>) for reference. We also include the sample numerical aperture (<strong>NAs</strong>), and the field of view (<strong>FOV1</strong>, <strong>FOV2</strong> and <strong>FOV3</strong>) and numerical aperture (<strong>NA1</strong>, <strong>NA2</strong> and <strong>NA3</strong>) of the objectives. The remote 3D image is magnified uniformly in all directions by <strong>M<sub>RR</sub></strong>.
+</figcaption>
+</figure>
+<p></p>
+
+<p>
+M1 and M2 share the same optical axis, but M3 is intentionally tilted with respect to M2 so that it images a tilted plane in the remote 3D space, and therefore a tilted plane in the sample at O1 (<a href="#fig_iDV_Snouty" target="_self">Figure 1</a>). The tilt angle between M2 and M3 must be set high enough so that the tilted plane in the sample is within the angular range of O1, which then enables a light-sheet to be coupled into O1 and made coincident with the tilted plane. The role of the Snouty objective is to allow the tilt operation between M2 and M3 (and therefore between O2 and O3) with minimal loss of light.
+</p>
+
+<h4 id="choosing_O1">Choosing the primary objective (O1)</h4>
+<p>
+Selecting O1 is an important design decision since it predetermines the maximum NA and field of view (FOV) available to the microscope. High NA is important for resolution and light collection efficiency, which comes from the increased <a href="https://doi.org/10.5281/zenodo.14368508">angular collection at the sample by O1</a> and <a href="https://doi.org/10.5281/zenodo.14344126">improved transmission from a reduced tilt</a> of the Snouty objective at the O2-O3 interface
+[<a class="citation" href="https://doi.org/10.1038/s41598-024-53900-9" 
+title="S-polarized light-sheets improve resolution and light-efficiency in oblique plane microscopy; 
+J. R. Sommernes, A. Millett-Sikking and F. Ströhl; Sci. Rep., vol 14, p3540, (2024)">Sommernes 2024</a>]. 
+A large FOV is important for maximizing the size of the instantaneous image that can be captured. Ideally we would have both a high NA and a large FOV simultaneously, but in practice we’re limited by the optical <a href="#preserving_sbp" target="_self">space-bandwidth product (SBP)</a> to choosing a realizable regime that is a trade-off between NA and FOV.
+</p>
+<p>
+High NA small FOV designs (e.g. O1 = 100x1.35 Silicone) have a high resolution and collection efficiency, and a light-sheet that is more orthogonal to the O1 optical axis which can improve z resolution. However, the more orthogonal light-sheet produces shallow volumes which together with the small FOV limits 3D volume size and is only good for small samples (e.g. cells, organelles, etc)
+[<a class="citation" href="https://doi.org/10.5281/zenodo.3244420" 
+title="High NA single-objective light-sheet; A. Millett-Sikking, K.M. Dean, R. Fiolka, A. Fardad, L. Whitehead and A.G. York; (2019)">Millett-Sikking 2019</a>].
+</p>
+<p>
+Low NA large FOV designs (e.g. O1 = 4x0.28 Air) have a low resolution and collection efficiency, a less orthogonal light-sheet that barely improves z resolution and high transmission losses at the O2-O3 interface. However the less orthogonal light-sheet enters the sample at a steep angle which together with the large FOV yields large 3D volumes that are good for large samples (e.g. organoids, embryos, tissues, expanded samples, etc)
+[<a class="citation" href="https://doi.org/10.1364/OPTICA.6.001166" 
+title="Diffractive oblique plane microscopy; M. Hoffmann and B. Judkewitz; (2019)">Hoffmann 2019</a>].
+</p>
+<p>
+The middle ground of medium-high NA and FOV designs (e.g. O1 = 20x1.0, or 40x1.15 water) are an attractive compromise
+[<a class="citation" href="https://doi.org/10.1038/s41592-022-01417-2" 
+title="DaXi—high-resolution, large imaging volume and multi-view single-objective light-sheet microscopy; B. Yang, M. Lange, A. Millett-Sikking, X. Zhao, J. Bragantini, S. VijayKumar, M. Kamb, R. Gómez-Sjöberg, A.C. Solak, W. Wang, H. Kobayashi, M.N. McCarroll, L.W. Whitehead, R.P. Fiolka, T.B. Kornberg, A.G. York and L.A. Royer; Nat. Methods, vol 19, p461–469, (2022)">Yang 2022</a>,
+<a class="citation" href="https://doi.org/10.1101/2025.10.04.680473" 
+title="Multi-immersion Oblique Plane Microscope (miOPM): A reconfigurable platform for high-resolution Light-Sheet Fluorescence Microscopy; B. Chen, A. Millett-Sikking, S. Gałecki, S. Daetwyler, J. Jiou, J. Monistrol, Q. Shen, F. Zhou, H. Lin, E. Jenkins, M. C. Stein, M. Marlar-Pavey, G. Sturm, A. L. Li, Q. Tang, B. Feng, U. Diaz, Y. Chen, A. Shalizi, A. Gillich, J. R. Friedman, R. Tomer, B. Chang, W. F. Marshall, S. Shahmoradian, K. M. Dean and R. Fiolka; bioRxiv, ID 2025.10.04.680473, (2025)">Chen 2025</a>
+]
+. The resolution loss compared to the highest NA alternatives is minor, the transmission efficiency is still high at the O2-O3 interface and the FOV is large enough to accommodate larger samples. Here a multi-view design is appealing since larger samples will typically refract, scatter and absorb the light-sheet more, and the medium-high NA is still high enough to extract 2 orthogonal views (e.g. 90&deg; apart). We will keep this medium-high NA and FOV regime in mind as we consider the theory and example design for the iDV-Snouty microscope.
+</p>
+
+<h4 id="constraints_on_na">Constraints on numerical aperture (NA)</h4>
+<p>
+Here we determine what affects the system numerical aperture (NA) in terms of the critical elements. The maximum available NA for the microscope is set by NA1 at the primary objective and a good design is able to retain NA1 through the rest of the optics (<a href="#fig_single_view_snouty_na_and_fov" target="_self">Figure 2</a>). Carefully chosen intermediate optics like tube lenses and mirrors typically do not limit the system NA, but the choice of O1 does put specific constraints on what is required for O2 (i.e. NA2).
+</p>
+<p>
+Objective lenses (i.e. O1 and O2) are specifically designed to image a 2D object plane (o) to 2D image plane (i) with high fidelity and therefore must adhere to the sine condition
+[<a class="citation" 
+href="https://www.pearson.com/en-us/subject-catalog/p/Hecht-Optics-5th-Edition/P200000006793/9780137526420" 
+title="Optics, 5th edition; E. Hecht; p265-266, ISBN-13: 9780133977226, ISBN-13: 9780137526420 (eBook), (2016)">Hecht 2016</a>]:
+
+\[ y_i n_i \sin\theta_i = y_o n_o \sin\theta_o \tag{2}\]
+
+where \(y_o\) (\(y_i\)), \(n_o\) (\(n_i\)) and \(\theta_o\) (\(\theta_i\)) are the height, refractive index and half angle of the object (image) respectively. We can rewrite the sine condition in terms of the lateral magnification \(\text{M}_{\text{L}} = y_i / y_o \) and numerical aperture \( \text{NA} = n \sin\theta \) as:
+
+\[ \text{NA}_i = \frac{\text{NA}_o}{\text{M}_{\text{L}}}  \tag{3}\]
+</p>
+<p>
+In the specific case of RR, we have an image formed at O2 (\(\text{NA}_i = \text{NA}2\)) from and object in the sample (\(\text{NA}_o = \text{NA}_s\))  with a magnification \(\text{M}_{\text{RR}}\), and we can assume that NA1 is preserved in the sample (\(\text{NA}_s = \text{NA}1\)). We can therefore re-write equation 3 as:
+
+\[ \text{NA}2 = \frac{\text{NA}1}{\text{M}_{\text{RR}}}  \tag{4}\]
+</p>
+<p>
+For the Snouty objective (O3) the constraint on NA3 comes from aiming to collect substantially all of the light delivered by O2, even with the high tilt angle between O2 and O3. The O2-O3 tilt angle must be set high enough to place the O3 image plane inside NA2, which is essential for imaging a tilted plane in the sample where a light-sheet can be delivered by O1. As a consequence of this requirement the Snouty objective must aim to collect light at O2 over a 90&deg; half angle in immersion \(n_2\):
+
+\[ \text{NA}3 = n_2 \tag{5}\]
+</p>
+<p>
+This is an interesting result; NA2 adjusts with NA1 (equation 4), but there is a fixed requirement on NA3 (equation 5). In other words, if we pick a lower NA1 then NA2 is alleviated but NA3 is not (<em>i.e. the Snouty objective has a harder job</em>).
+</p>
+
+<h4 id="preserving_sbp">Preserving space-bandwidth product (SBP)</h4>
+<p>
+A key figure of merit for a microscope is  the amount of information that can be collected and transferred in a given instance, which is often referred to as the space-bandwidth product (SBP)
+[<a class="citation" href="https://doi.org/10.1364/JOSAA.13.000470" 
+title="Space–bandwidth product of optical signals and systems; A. W. Lohmann, R. G. Dorsch, D. Mendlovic, Z. Zalevsky and C. Ferreira; J. Opt. Soc. Am. A, vol 13-3, p470-473, (1996)">Lohmann 1996</a>]
+:
+
+\[ \text{SBP} = 2 y_o \frac{2 \text{NA}}{\lambda} \tag{6}\]
+
+where \(\lambda\) is the wavelength, \(2 y_o\) is the linear field of view (FOV) and \(\frac{2 \text{NA}}{\lambda}\) is the reciprocal of the Abbe diffraction limit
+[<a class="citation" href="https://doi.org/10.1007/978-0-387-45524-2" title="Handbook of Biological Confocal Microscopy, third edition; J. Pawley; p571, Springer US, ISBN 978-0-387-25921-5, eBook ISBN 978-0-387-45524-2, (2006)">Pawley 2006</a>]. So we can see that the SBP is just the ratio of the FOV and resolution of the system, a dimensionless number that tells us how many points we can resolve across the whole linear FOV.
+</p>
+
+<p>
+The SBP can be thought of as a measure of quality, complexity or sophistication of the optical design, where more is harder to achieve, and is closely related to optical throughput or 'etendue'
+[<a class="citation" href="https://doi.org/10.1515/aot-2019-0002" 
+title="Systematic design of microscope objectives. Part I: System review and analysis; Y. Zhang and H. Gross; Adv. Opt. Techn., vol 8-5, p313–347, (2019)">Zhang 2019</a>]
+. In a system that has optics in series, the optic with the lowest SBP will typically limit the system SBP. In a Snouty light-sheet microscope SBP is typically not limited by intermediate optics (i.e. carefully chosen tube lenses and mirrors) and so the SBP limit comes from the objectives (i.e. O1, O2 and O3). Here we will assume that the objectives receive the same ‘maximal effort’ and therefore preserve the SBP across all 3:
+
+\[ \text{SBP}1 = \text{SBP}2 = \text{SBP}3 \tag{7}\]
+
+So combining equations 6 and 7 we see that the product of the FOV and NA is preserved in an ideal system:
+
+\[ \text{NA}1 \ \text{FOV}1 = \text{NA}2 \ \text{FOV}2 = \text{NA}3 \ \text{FOV}3 \tag{8}\]
+</p>
+
+<h4 id="constraints_on_fov">Constraints on field of view (FOV)</h4>
+<p>
+For a given NA1 we want the largest possible FOV1 (i.e. max SBP) and we want to preserve this SBP through the rest of the system. However, we have clear constraints on NA (equations 4 and 5) and SBP (equation 8) which constrain FOV2 and FOV3:
+
+\[ \text{FOV2} = \text{M}_{\text{RR}} \ \text{FOV1} \tag{9}\]
+
+\[ \text{FOV3} = \sin\theta_2 \ \text{FOV2} \tag{10}\]
+</p>
+<p>
+This is an important result. Firstly we can see that FOV2 relates to FOV1 by a factor of M<sub>RR</sub> to accommodate the remote 3D image (i.e. ~1.33&ndash;1.51 larger). Secondly, we can see that FOV3 relates to FOV2 by a factor of \(\sin\theta_2\). In practice, O2 is an air objective (\(n_2 = 1\)) and so \(\sin\theta_2 = \text{NA}2\) which is at most 0.95 for high NA systems and often approaches 0.75 for medium-high NA systems. <em>So in other words, the Snouty field of view (FOV3) is inherently smaller than FOV2.</em>
+</p>
+
+<h4 id="lateral_shift_for_dv">Lateral shift for dual-view</h4>
+<p>
+We established in the previous subsection that the Snouty field of view (FOV3) is smaller than FOV2 by a factor of NA2. This is a drawback for a single-view system, since O3 will discard a portion of FOV2. However, this feature facilitates the iDV-Snouty design; because FOV3 is smaller than FOV2 the Snouty objective can shift laterally (to some extent) without loss of information (<a href="#fig_single_view_snouty_lateral_shift" target="_self">Figure 3</a>). The range over which this lateral motion is penalty free scales with NA2 and is more pronounced for lower NA systems. In the example where NA2 = 0.75 (i.e. medium-high NA designs) FOV2 is 33.33% larger than FOV3, and so FOV2 has a significant amount of extra, unused FOV.
+</p>
+
+<figure id="fig_single_view_snouty_lateral_shift">
+<img src="figures/single_view_snouty_lateral_shift.png" alt="single view snouty lateral shift" id="single_view_snouty_lateral_shift_img" style="width:100%;">
+<figcaption>
+<strong>Figure 3: Single-view Snouty light-sheet microscope lateral shift.</strong>
+This figure shows a single-view Snouty light-sheet microscope with a pure lateral <strong>shift</strong> of M3 away from the optical axis of M2. The lateral shift in the remote 3D image results in a reduced lateral shift of the tilted image plane in the sample (i.e. away from the optical axis of M1 by a factor of M<sub>RR</sub>). The light-sheet position in the sample is adjusted to match the newly shifted location of the tilted image plane. Because FOV3 is smaller than FOV2, this is a penalty free operation to some extent (equation 10). We also label the dual-galvo optical scanner (<strong>OS*</strong>) between M1 and M2. The optical scanner scans the light-sheet back and forth laterally at O1 to acquire 3D volumes of the sample.
+</figcaption>
+</figure>
+<p></p>
+
+<p>
+So the key realizations here are that FOV2 has extra space, O3 can shift laterally to make more space, and that we can use the extra space to add a 4th Snouty objective (O4) and a 4th microscope (M4). M3 and M4 can both view the remote 3D image simultaneously from different directions in a dual-view regime. The 2 views are ‘instant’ and can be excited by 2 light-sheets coupled into O1. We call this new mode instant dual-view Snouty (iDV-Snouty) light-sheet microscopy (<a href="#fig_iDV_Snouty" target="_self">Figure 1</a>).
+</p>
+
+<h4 id="3d_acquisition_rate_boost">3D acquisition rate boost</h4>
+<p>
+In a regular Snouty light-sheet microscope a popular way to acquire 3D volumes is to employ some kind of fast optical scanner (OS*) to sweep the light-sheet back and forth at O1 (<a href="#fig_single_view_snouty_lateral_shift" target="_self">Figure 3</a>). This lateral scanning operation enables a series of 2D images of the tilted plane to be acquired at different lateral positions to make up a 3D volume. An optical scanner can come in various forms like lens-galvo-lens
+[<a class="citation" href="https://doi.org/10.1038/s41592-019-0579-4" 
+title="Real-time volumetric microscopy of in vivo dynamics and large-scale samples with SCAPE 2.0; V. Voleti, K. B. Patel, W. Li, C. P. Campos, S. Bharadwaj, H. Yu, C. Ford, M. J. Casper, R. W. Yan, W. Liang, C. Wen, K. D. Kimura, K. L. Targoff and E. M. C. Hillman; Nat. Methods, vol 16, p1054–1062, (2019)">Voleti 2019</a>]
+, lens-dual-galvo-lens
+[<a class="citation" href="https://doi.org/10.1364/BOE.467969" 
+title="Increasing the Field-of-View in Oblique Plane Microscopy via optical tiling; B. Chen, B. Chang, F. Zhou, S. Daetwyler, E. Sapoznik, G.M. Gihana, L.P. Castro, M.C. Sorrell, K.M. Dean, A. Millett-Sikking, A.G. York and R.P. Fiolka; Biomed. Opt. Express, Vol 13, p5616-5627, (2022)">Chen 2022</a>]
+, dual-galvo
+[<a class="citation" href="https://doi.org/10.1101/2025.10.04.680473" 
+title="Multi-immersion Oblique Plane Microscope (miOPM): A reconfigurable platform for high-resolution Light-Sheet Fluorescence Microscopy; B. Chen, A. Millett-Sikking, S. Gałecki, S. Daetwyler, J. Jiou, J. Monistrol, Q. Shen, F. Zhou, H. Lin, E. Jenkins, M. C. Stein, M. Marlar-Pavey, G. Sturm, A. L. Li, Q. Tang, B. Feng, U. Diaz, Y. Chen, A. Shalizi, A. Gillich, J. R. Friedman, R. Tomer, B. Chang, W. F. Marshall, S. Shahmoradian, K. M. Dean and R. Fiolka; bioRxiv, ID 2025.10.04.680473, (2025)">Chen 2025</a>]
+ and single-galvo (e.g. <a href="https://doi.org/10.5281/zenodo.3629893">Scandreas</a>) arrangements. In all cases we typically sweep FOV1 in a symmetric mode about the O1 optical axis.
+</p>
+<p>
+In previous sequential scan dual-view implementations (e.g. DaXi and dOPM) we have to scan twice (i.e. 1 scan for each view) to get the 2 overlapping volumes that we can fuse in post processing:
+
+\[ \text{scan}_{\ \text{DV}} = 2 \ \text{FOV1} \tag{11}\]
+
+In the new iDV-Snouty mode we are intentionally shifting M3 and M4 laterally by some fraction of FOV2, and therefore by some fraction of FOV1 (equation 9). As a consequence of this shift the tilted image planes from O3 and O4 are no longer centered on the optical axis of O1 (shown in <a href="#fig_single_view_snouty_lateral_shift" target="_self">Figure 3</a> for O3), and so we now need to scan wider if we want to fully sweep FOV1 with both light-sheets LS1 and LS2 (<a href="#fig_iDV_Snouty" target="_self">Figure 1</a>). So whilst the individual views are instant, to get 2 fully overlapping volumes we have to scan iDV-Snouty by:
+
+\[ \text{scan}_{\ \text{iDV}} = \text{FOV1} + 2\ \text{shift} / \text{M}_{\text{RR}}  \tag{12}\]
+
+If we now take the ratio of the sequential and iDV scans (equations 11 and 12) we can get a good indication of the 3D acquisition rate boost we can expect from the iDV mode:
+
+\[ \text{3D acquisition}\ \text{rate}\ \text{boost} = \frac{2}{1 + (2\ \text{shift} / \text{M}_{\text{RR}})\ / \ \text{FOV1}} \tag{13}\]
+
+So we can see from equation 13 that if the size of the Snouty lateral shift is small compared to FOV1 then the 3D acquisition rate boost approaches 2. Alternatively, in a stage scanning regime where the image series is taken by moving the sample laterally then both views are acquired instantly and the 3D acquisition rate boost is effectively doubled. In all cases because iDV-Snouty avoids additional optics in series and moving parts the 3D acquisition rate boost will be higher in practice. The improved optical transmission enables shorter camera exposures and the 2nd view is acquired without the time penalty of image flipping galvos (DaXi) or mirrors (dOPM).
+</p>
+
+<h4 id="axial_sample_position_regimes">Axial sample position regimes</h4>
+<p>
+Typically the axial position of the sample (Z) is adjusted so that the region of interest (ROI) is centered at the nominal focal plane of O1. This arrangement utilizes the ‘sweet spot’ of the optics where the instantaneous FOV is maximal. Depending on the choice of ROI we can think of Z as being either a ‘shallow’ or ‘deep’ regime (<a href="#fig_idv_snouty_axial_sample_position" target="_self">Figure 4</a>). The shallow regime would mean imaging just above the coverslip for an inverted microscope (or the edge of a sample for an upright/dipping microscope). The deep regime would mean imaging substantially above the coverslip for an inverted microscope (or deep into a 3D sample with an upright/dipping microscope). With the iDV-Snouty microscope it’s important to identify these 2 regimes since they can affect how the system operates.
+</p>
+
+<figure id="fig_idv_snouty_axial_sample_position">
+<img src="figures/idv_snouty_axial_sample_position.png" alt="idv snouty axial sample position" id="idv_snouty_axial_sample_position_img" style="width:100%;">
+<figcaption>
+<strong>Figure 4: iDV-Snouty axial sample position.</strong>
+This figure shows how the axial sample position can be in either a <strong>shallow regime</strong> or a <strong>deep regime</strong>. The shallow regime corresponds to imaging just above the coverslip and the deep regime corresponds to imaging substantially above the coverslip (shown here with the sample moving down towards O1). In the shallow regime the coverslip sits at or above the lowest extent of the tilted image plane (i.e. above where the light-sheets cross each other) and is a favorable regime that ensures that no part of the sample (i.e. fluorescent material) can be excited by <strong>LS1</strong> (intended for <strong>V1</strong>) and accidentally be collected by <strong>V2</strong>. In the deep regime the coverslip sits below the lowest extent of the tilted plane in the sample that is being imaged (i.e. below where the light-sheets cross each other) and we can collect out-of-focus fluorescence excited by LS1 (intended for V1) on V2 as unwanted background or <strong>cross talk</strong> (i.e. similar to out-of-focus haze when imaging a 3D fluorescent sample on a widefield). The cross talk from LS1 to V2 is indicated here for 1 point with black and yellow rays and more generally in V1 and V2 and as a hazy orange background.
+</figcaption>
+</figure>
+<p></p>
+
+<p>
+In the shallow regime the coverslip (or sample edge) sits at or above the lowest extent of the tilted plane in the sample that is being imaged (i.e. at or above the lowest extent of the Snouty FOV3 in the remote space). This is a favorable regime for iDV mode that avoids any ‘cross talk’ between the 2 views. iDV is only ‘instant’ if both views can be taken simultaneously, and the shallow regime ensures that no part of the sample (i.e. fluorescent material) can be excited by light-sheet 1 (intended for view 1) and accidentally be collected by view 2 or vice versa (i.e. as unwanted background).
+</p>
+<p>
+For the deep regime the coverslip (or sample edge) sits below the lowest extent of the tilted plane in the sample that is being imaged. In this regime fluorescent material from the sample can be unintentionally excited by light-sheet 1 (intended for view 1) and collected by view 2 as background (i.e. similar to out-of-focus haze when imaging a 3D fluorescent sample on a widefield). To avoid this artifact we suggest switching to a sequential fast triggered mode where the light-sheets and camera exposures are rapidly toggled and nested in time to minimize acquisition time. In the case where the light-sheet illumination time is significantly lower than the camera readout time then this sequential fast triggered mode could approach the acquisition rate of the instant mode (i.e. in the regime of higher laser powers, shorter camera exposures and longer readout times). For this mode global shutter cameras may be preferable to reject any unwanted light during the non-exposing portion of the acquisition.
+</p>
+
+<h3 id="example_design">Example design</h3>
+<p>
+Designing a Snouty light-sheet microscope involves carefully balancing a collection of interwoven choices and specifications. Here we present a current design (NA 0.6) with all stock parts and an <strong>improved</strong> design (NA 1.0) that uses a newly proposed <a href="#dual_grind_snouty" target="_self">‘dual-grind’ AMS-AGY v3</a> objective. Both designs share the same optical train  except for the O2-O3-O4 interface (<a href="#fig_idv_snouty_remote_space_render" target="_self">Figure 5</a>).
+</p>
+
+<figure id="fig_idv_snouty_remote_space_render">
+<img src="figures/idv_snouty_remote_space_render.png" alt="idv snouty remote space render" id="idv_snouty_remote_space_render_img" style="width:100%;">
+<figcaption>
+<strong>Figure 5: Instant dual-view Snouty (iDV-Snouty) light-sheet microscope remote space render.</strong>
+This figure shows a CAD rendering of the remote space (i.e. O2-O3-O4 interface) in the iDV-Snouty light-sheet microscope example design. We show the current design (NA 0.6) with a Nikon 20x0.45 air objective (O2) and 2 of the latest ‘250 &mu;m grind’ <a href="https://doi.org/10.5281/zenodo.19596518">AMS-AGY v3</a> objectives (O3 and O4). We also show the <strong>improved design</strong> (NA 1.0) with a Nikon 20x0.80 air objective (O2) and 2 of the newly proposed <a href="#dual_grind_snouty" target="_self">‘dual-grind’ AMS-AGY v3</a> objectives (O3 and O4).
+</figcaption>
+</figure>
+<p></p>
+
+<p>
+We list the parts in order from the sample to the detector (<a href="#tbl_emission_path_elements" target="_self">Table 1</a>), with some <em>alternative</em> options and upgrades. The table includes links to the <a href="./appendix.html">appendix</a> (via the ID) where we discuss the <a href="./appendix.html#emission_path_elements">emission path elements</a> in detail, why each choice was made and how other options may be attractive (with some discussion of the coupling between elements).
+</p>
+
+<div id="tbl_emission_path_elements">
+<style>
+#tbl_emission_path_elements table, #tbl_emission_path_elements th, #tbl_emission_path_elements td {
+border:1px solid black; text-align:center; padding:1px; font-size:small;}
+</style>
+<table>
+<caption style="caption-side: bottom;">
+(*optional elements that are highly recommended. <sup>2</sup>repeated elements for iDV-Snouty.).
+<br><strong>Table 1: Example design</strong>
+</caption>
+  <tr>
+  <th>ID</th>
+  <th>Description</th>
+  <th>Current design (part)</th>
+  <th><strong>Improved</strong>/<em>Alternative</em> design (part)</th>
+  </tr>
+ 
+  <tr>
+  <td><a href="./appendix.html#o1">O1</a></td>				
+  <td>Objective 1</td>
+  <td>Nikon 20x1.0 water (<a href="./parts/mrd77226.png">MRD77226</a>)</td>
+  <td><em>Nikon 20x0.95 water (<a href="./parts/mrd77205.png">MRD77205</a>)</em></td>
+  </tr>
+
+  <tr>
+  <td><a href="./appendix.html#af">AF*</a></td>			
+  <td>Autofocus</td>
+  <td></td>
+  <td><em>Prior PureFocus850 (<a href="./parts/pf850.pdf">PF850</a>)</em></td>
+  </tr>
+
+  <tr>
+  <td><a href="./appendix.html#fm">FM*</a></td>			
+  <td>Fold mirror</td>
+  <td>Thorlabs 2" elliptical mirror (<a href="./parts/bbe2-e02.pdf">BBE2-E02</a>)</td>
+  <td></td>
+  </tr>
+
+  <tr>
+  <td><a href="./appendix.html#tl1">TL1</a></td>			
+  <td>Tube lens 1</td>
+  <td>Thorlabs 200 mm (<a href="./parts/ttl200mp.pdf">TTL200MP</a>)</td>
+  <td><em>Nikon 200 mm (<a href="./parts/75-379.pdf">75-379</a>)</em></td>
+  </tr>
+
+  <tr>
+  <td><a href="./appendix.html#os">OS*</a></td>			
+  <td>Optical scanner</td>
+  <td>Dual-galvo Thorlabs 20 mm (<a href="./parts/qs20x-ag.pdf">QS20X-AG</a>)</td>
+  <td><em>Lens-galvo-lens</em></td>
+  </tr>
+
+  <tr>
+  <td><a href="./appendix.html#tl2">TL2</a></td>			
+  <td>Tube lens 2</td>
+  <td>Custom 150 mm (<a href="./parts/efl150mm.pdf">EFL150mm</a>)</td>
+  <td></td>
+  </tr>
+
+  <tr>
+  <td><a href="./appendix.html#dm">DM</a></td>				
+  <td>Dichroic mirror</td>
+  <td>Chroma (<a href="./parts/zt405488561640rpcv2.png">ZT405/488/561/640rpcv2</a>)</td>
+  <td><em>Add dichroic slider</em></td>
+  </tr>
+
+  <tr>
+  <td><a href="./appendix.html#o2">O2</a></td>				
+  <td>Objective 2</td>
+  <td>Nikon 20x0.45 air (<a href="./parts/mrh08230.png">MRH08230</a>)</td>
+  <td><strong>Nikon 20x0.80 air</strong> (<a href="./parts/mrd70270.png">MRD70270</a>)</td>
+  </tr>
+
+  <tr>
+  <td><a href="./appendix.html#cs">CS</a></td>				
+  <td>Coverslip</td>
+  <td></td>
+  <td><strong>#1.5/0.17 mm</strong> (contact <a href="https://www.asiimaging.com/">ASI</a>)</td>
+  </tr>
+
+  <tr>
+  <td><a href="./appendix.html#o3">O3<sup>2</sup></a></td>	
+  <td>Objective 3</td>
+  <td>‘250 &mu;m grind’ <a href="https://doi.org/10.5281/zenodo.19596518">AMS-AGY v3</a> (<a href="https://www.asiimaging.com/">ASI</a> <a href="./parts/57-14-7.pdf">57-14-7</a>)</td>
+  <td><a href="#dual_grind_snouty" target="_self"><strong>‘dual-grind’ AMS-AGY v3</strong></a> (contact <a href="https://www.asiimaging.com/">ASI</a>)</td>
+  </tr>
+
+  <tr>
+  <td><a href="./appendix.html#em">EM<sup>2</sup></a></td>	
+  <td>Emission filter</td>
+  <td>Chroma (<a href="./parts/zet405488561640mv2.png">ZET405/488/561/640mv2</a>)</td>
+  <td><em>Add filter wheel (<a href="./parts/lambda10-3.pdf">Lambda10-3</a>)</em></td>
+  </tr>
+
+  <tr>
+  <td><a href="./appendix.html#tl3">TL3<sup>2</sup></a></td>
+  <td>Tube lens 3</td>
+  <td>Thorlabs 180 mm (<a href="./parts/ttl180-A.pdf">TTL180-A</a>)</td>
+  <td><em>Custom 150 mm (<a href="./parts/efl150mm.pdf">EFL150mm</a>)</em></td>
+  </tr>
+
+  <tr>
+  <td><a href="./appendix.html#pg">PG*<sup>2</sup></a></td>	
+  <td>Projection galvos</td>
+  <td></td>
+  <td><em>Dual-galvo Thorlabs 20 mm (<a href="./parts/qs20x-ag.pdf">QS20X-AG</a>)</em></td>
+  </tr>
+
+  <tr><td><a href="./appendix.html#c">C<sup>2</sup></a></td>	
+  <td>Camera</td>
+  <td>Excelitas sCMOS (<a href="./parts/pco_edge10_bi_clhs.pdf">pco.edge 10 bi CLHS</a>)</td>
+  <td><em>Tucsen sCMOS (<a href="./parts/dhyana_2100.pdf">Dhyana 2100</a>)</em></td>
+  </tr>
+</table>
+</div>
+
+<p>
+We also include a discussion of some of the important <a href="./appendix.html#system_level_considerations">system level considerations</a>, like the choice of <a href="./appendix.html#immersion">immersion</a> (water) and <a href="./appendix.html#tilt_angle">tilt angle</a> (45&deg;), <a href="./appendix.html#light_sheet_options">light-sheet options</a>, choosing an appropriate <a href="./appendix.html#o3_o4_air_gap">O3-O4 air gap</a> (~30&mu;m), the expected <a href="./appendix.html#2d_fov">2D FOV</a> (double), <a href="./appendix.html#3d_fov">3D FOV</a> (450 \(\times\) 1100 \(\times\) 225 &mu;m (X \(\times\) Y \(\times\) Z) \(\times\) 2 views), <a href="./appendix.html#3d_fov_non_dl">3D FOV non diffraction limited</a> (830 \(\times\) 1100 \(\times\) 306 &mu;m (X \(\times\) Y \(\times\) Z) \(\times\) 2 views) and the <a href="./appendix.html#3d_acquisition_rate_boost">3D acquisition rate boost</a> we can expect (~1.7). Basic <a href="./zemax">Zemax</a> and <a href="./cad">CAD</a> are provided for the current and improved versions of the default design.
+</p>
+
+<h4 id="dual_grind_snouty">Dual-grind AMS-AGY v3 objective</h4>
+<p>
+The newly proposed ‘dual-grind’ AMS-AGY v3 objective (<a href="#fig_iDV_Snouty_remote_space_render" target="_self">Figure 6</a>) is essential for enabling the improved iDV-Snouty design with an uncompromised system NA of 1.0. The dual-grind tip is a straightforward modification to the existing ‘250 &mu;m grind’ tip that involves grinding the other side down in a similar way to the existing grind. For example, a ‘250 &mu;m grind’ on one side and a ‘900 &mu;m grind’ (already an option) on the opposing side would be acceptable (<a href="./cad/o3/ams-agy_v3_57-14-7_revb_dual_grind.pdf">2D drawing here</a>).
+</p>
+<p>
+The 'dual-grind' AMS-AGY v3 objective could replace the current ‘250 &mu;m grind’ and ‘900 &mu;m grind’ versions, resulting in a single unified design for high NA single-view, low NA single-view and dual-view systems.
+</p>
+
+<figure id="fig_dual_grind_snouty">
+<img src="figures/ams-agy_v3_dual_grind_render.png" alt="ams-agy v3 dual grind render" id="ams-agy_v3_dual_grind_render_img" style="width:100%;">
+<figcaption>
+<strong>Figure 6: Dual-grind AMS-AGY v3 objective.</strong>
+This figure shows the newly proposed 'dual-grind' AMS-AGY v3 objective, which fuses the 2 existing versions of the <a href="https://doi.org/10.5281/zenodo.19596518">AMS-AGY v3</a> objective by having a ‘250 &mu;m grind’ on one side and a  ‘900 &mu;m grind’ on the other side (<a href="./cad/o3/ams-agy_v3_57-14-7_revb_dual_grind.pdf">2D drawing</a>). This results in a single unified 'dual-grind' AMS-AGY v3 design for high NA single-view, low NA single-view and dual-view systems (<a href="./cad/o3/">CAD here</a>).
+</figcaption>
+</figure>
+<p></p>
+
+<p>
+For iDV-Snouty microscopy the main benefit of the 'dual-grind' design is that it removes the glass that protrudes towards O2 (<a href="#fig_idv_snouty_remote_space_render" target="_self">Figure 5</a>), and leaves enough clearance (~457 &mu;m) to use a high NA (short working distance) O2 that can retain the full NA of O1 (<a href="#fig_idv_snouty_improved_design_3d_fov_detail" target="_self">Figure 7</a>). Critically we can also see that the air gap (~30 &mu;m) and the Snouty shift (~129 &mu;m) are small enough that the diffraction limited Snouty field of view (FOV4) remains within the remote 3D volume, effectively doubling the useable FOV. See <a href="./appendix.html#3d_fov">3D FOV</a> in the appendix for full details.
+</p>
+
+<figure id="fig_idv_snouty_improved_design_3d_fov_detail">
+<img src="./figures/idv_snouty_improved_design_3d_fov_detail.png" alt="idv snouty improved design 3d fov detail" id="idv_snouty_current_design_lateral_shift_detail_img" style="width:100%;">
+<figcaption>
+<strong>Figure 7: 2D drawing of the remote space in the improved iDV-Snouty design (NA 1.0).</strong>
+Here we show a detail view of the remote space from the <a href="./cad/improved_design/idv_snouty_improved_design.pdf">2D drawing</a> of the improved iDV-Snouty design (NA 1.0). We show the ground glass edge <strong>160 &mu;m</strong> from the <strong>O4 optical axis</strong> in 1 direction and <strong>485 &mu;m</strong> in the other direction, which gives a grind limited optical FOV of <strong>125 &mu;m</strong> and <strong>450 &mu;m</strong> respectively (<strong>575 &mu;m</strong> total). The diffraction limited FOV4 is limited by the grind in 1 direction (<strong>125 &mu;m</strong>) and the optical design in the other direction (<strong>300 &mu;m</strong>) to give a total of <strong>425 &mu;m</strong> (<strong>FOV4</strong>). We have a <strong>30 &mu;m</strong> air gap between the Snouty objectives (<strong>O3</strong> and <strong>O4</strong>) which are symmetric about the <strong>O2 optical axis</strong> with a 45&deg; tilt. The sum of the air gap per objective (15 &mu;m) and the 160 &mu;m at 45&deg; (~113 &mu;m) gives the required Snouty shift of <strong>~129&mu;m</strong>. We have a <strong>170&mu;m</strong> (#1.5) coverslip (<strong>CS</strong>) in contact with <strong>O2</strong> and an O2-(O3-O4) clearance of <strong>~457&mu;m</strong> along the O2 optical axis. See <a href="./appendix.html#3d_fov">3D FOV</a> in the appendix for full details.
+</figcaption>
+</figure>
+<p></p>
+
+<h3 id="conclusion">Conclusion</h3>
+<p>
+Improvements in microscopy often come as a trade-off in speed, resolution or field of view (FOV). Here, by careful consideration of both the theoretical and current practical limits of Snouty light-sheet microscopy we have shown that it is possible to upgrade a single-view Snouty to an instant dual-view Snouty (iDV-Snouty) without compromise.
+</p>
+<p>
+The iDV mode is realized by adding a 2nd Snouty objective in tandem with the 1st Snouty objective. In practice, this means moving each Snouty objective laterally away from the primary optical axis so they can share the FOV between them. In a typical optical system, where each element has the same or a similar FOV, moving a lens laterally would constitute a loss in useful FOV. However, we showed that in the special case of a Snouty light-sheet microscope, the Snouty FOV is always smaller than the upstream optics, especially for lower numerical aperture (NA) systems. So in practice, instead of losing useful FOV, the iDV mode can actually double the information rate of a single-view system.
+</p>
+<p>
+There are many advantages to iDV-Snouty. The 2nd view is purely additive, offering a strict technical upgrade compared to a single-view system. It avoids the additional optics in series and moving parts of previous methods (e.g. DaXi, dOPM), improving transmission efficiency, reliability and acquisition rates. Whilst the individual views are ‘instant’ (i.e. double rate), the off-axis placement of the Snouty objectives can reduce the volumetric acquisition rate to less than double when using an optical scanner. However, there are other scan modes like stage scanning or microfluidic flow where the volumetric acquisition rate is double that of a single view or sequential acquisition dual-view system. We acknowledge that imaging deep into a sample may require a sequential fast triggered mode that is slightly slower than the instant mode to avoid ‘cross talk’ between the 2 views.
+</p>
+<p>
+We present a realizable iDV-Snouty design with a current and improved version. The current version uses all stock parts, including the ‘250 &mu;m grind’ <a href="https://doi.org/10.5281/zenodo.19596518">AMS-AGY v3</a> objective, and can be deployed with a system NA of 0.6. The improved version also uses stock parts, with the exception of a newly proposed <a href="#dual_grind_snouty" target="_self">‘dual-grind’ AMS-AGY v3</a> objective, and can achieve a system NA of 1.0. Both designs have orthogonal dual-views and a diffraction limited FOV up to 450 \(\times\) 1100 \(\times\) 225 &mu;m (X \(\times\) Y \(\times\) Z) \(\times\) 2 views or a non diffraction limited FOV up to 830 \(\times\) 1100 \(\times\) 306 &mu;m^3 (X \(\times\) Y \(\times\) Z) \(\times\) 2 views. We expect a 3D acquisition rate boost of at least ~1.7 compared to a sequential dual-view system (e.g. DaXi, dOPM).
+</p>
+<p>
+iDV-Snouty presents an interesting opportunity to combine microscopy modalities into the same sample volume. We illustrate this in the example design with the optional real-time multi-angle projection galvos 
+[<a class="citation" href="https://doi.org/10.1038/s41592-021-01175-7" 
+title="Real-time multi-angle projection imaging of biological dynamics; 
+B. Chang, J.D. Manton, E. Sapoznik, T. Pohlkamp, T.S. Terrones, E.S. Welf, V.S. Murali, P. Roudot, K. Hake, 
+L. Whitehead, A.G. York, K.M. Dean and R.P. Fiolka; 
+(2021)">Chang 2021</a>]. 
+Here with iDV-Snouty we can acquire 2 simultaneous projections of a 3D sample from different directions, offering an ultrafast mode to explore 3D samples that may not need a full 3D (slice by slice) acquisition. Another approach could be to use the instant dual-views to boost spectral multi-plexing
+[<a class="citation" href="https://doi.org/10.1038/s41566-025-01745-7" 
+title="Multispectral live-cell imaging with uncompromised spatiotemporal resolution; A. Kumar, K. E. McNally, Y. Zhang, A. Haslett-Saunders, X. Wang, J. Guillem-Marti, D. Lee, B. Huang, S. Stallinga, R. R. Kay, D. Baker, E. Derivery and J. D. Manton; Nat. Photon., vol 19, p1146–1156, (2025)">Kumar 2025</a>]
+, or to use the 1st view for regular Snouty light-sheet imaging (i.e. 3D fluorescence) and the 2nd view for another mode like photoactivation
+[<a class="citation" href="https://doi.org/10.1021/acsaom.3c00025" 
+title="Photoactivatable Fluorophores for Bioimaging Applications; Y. Zhang, Y. Zheng, A. Tomassini, A. K. Singh and F. M. Raymo; ACS Appl. Opt. Mater. vol 1-3, p640–651, (2023)">Zhang 2023</a>]
+or FLIM
+[<a class="citation" href="https://doi.org/10.1117/1.JBO.25.7.071203" 
+title="Fluorescence lifetime imaging microscopy: fundamentals and advances in instrumentation, analysis, and applications; R. Datta, T. M. Heaster, J. T. Sharick, A. A. Gillette and M. C. Skala; Journal of Biomedical Optics, vol 25-7, 071203, (2020)">Datta 2020</a>]
+. We offer this platform openly and look forward to assisting others in building prototypes and creatively exploring what is possible with this new architecture.
+</p>
+
+<h3>Acknowledgements</h3>
+<p>
+We thank Julia Lazzari-Dean, Kendra Nyberg and Nate Thayer for encouraging discussions, and  Magdalena Preciado López and Robert F. Keyser for supporting this innovation.
+</p>
+<p>This work was funded and supported by <a href="https://www.calicolabs.com/">Calico Life Sciences LLC</a>, and we 
+would like to acknowledge the fantastic research environment that has been created here by the senior staff. We have 
+enjoyed a spectacular level of freedom and support that has made this work possible.</p>
+
+<h3><a href="./appendix.html">Appendix</a></h3>
+<p>Additional details can be found in the <a href="./appendix.html">appendix</a>.</p>
+
+<noscript>
+<h3>Your browser doesn't seem to support Javascript. This document uses Javascript to generate a reference list, 
+which would normally be displayed here. Either activate Javascript, or use the "Download PDF" link above if you 
+want to see the reference list.</h3></noscript>
+
+</section>
+<footer>
+  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+  <img alt="Creative Commons License" style="border-width:0" src="./images/cc_by_4p0.png"></a>
+
+  <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a></small></p>
+</footer>
+</div>
+ <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+</body>
+</html>

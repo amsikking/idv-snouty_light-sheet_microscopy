@@ -1,0 +1,359 @@
+<!doctype html>
+<!-- 
+This publication template is based on the one created by Andrew G York:
+https://github.com/AndrewGYork/publication_template . Thanks Andrew!
+
+Based on this theme: https://github.com/broccolini/dinky , which mentioned that 
+attribution is appreciated. Thanks, broccolini!
+-->
+<html lang="en">
+  <head>
+    <base target="_blank">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>iDV-Snouty_light-sheet_microscopy_appendix</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/prism.css">
+    <script src="javascript/python-highlighting/prism.js"></script>
+    <script async src="javascript/Minimal-MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
+    <script src="javascript/update_figures.js"></script>
+    <script src="javascript/reference_list/reference_list.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">iDV-Snouty light-sheet microscopy</h1>
+        <ul>
+          <li class="download"><a class="buttons" 
+		  href="https://github.com/amsikking/idv-snouty_light-sheet_microscopy/zipball/master">Download ZIP</a></li>
+          <li><a class="buttons github" 
+		  href="https://github.com/amsikking/idv-snouty_light-sheet_microscopy">View On GitHub</a></li>
+          <li><a class="buttons pdf" 
+		  href="./idv-snouty_light-sheet_microscopy_appendix.pdf">Download PDF</a></li>
+        </ul>
+        <p class="header">This project is maintained by 
+		<a class="header name" href="https://amsikking.github.io/">amsikking</a> from 
+		
+		<!-- TODO: update group website -->
+		
+		<!-- <a class="header name" href="https://amsikking.github.io/">Calico Automation</a>, and was funded by  -->
+		Calico Automation, and was funded by 
+		<a class="header name" href="https://www.calicolabs.com/">Calico Life Sciences LLC</a></p>
+      </header>
+<!-- 
+##############################################################
+The real text begins here.
+##############################################################
+ -->
+<section>
+<h1>Appendix</h1>
+<h3 class="onlyprint">
+Note that this is a limited PDF or print version; animated and interactive figures are disabled. For the full version of this article, please visit one of the following links: 
+<a href="https://amsikking.github.io/idv-snouty_light-sheet_microscopy">
+https://amsikking.github.io/idv-snouty_light-sheet_microscopy</a>
+</h3>
+<noscript>
+<h3>Your browser doesn't seem to support Javascript. This document uses Javascript for interactive figures, math 
+typesetting, and to automatically generate the reference list. Either activate Javascript, or use the "Download PDF" 
+link above if you want properly typeset math and a reference list.</h3>
+</noscript>
+<h2>Instant dual-view Snouty (iDV-Snouty) light-sheet microscopy</h2>
+<p><a href="./index.html" title="Main text" target="_self">Back to the main text</a></p>
+
+<h3 id="emission_path_elements">Emission path elements</h3>
+<p>
+Here we discuss the element by element choices for the emission path, why each choice was made and how other options may be attractive (<a href="#fig_idv_snouty_all_labels" target="_self">Figure A1</a>).
+</p>
+
+<figure id="fig_idv_snouty_all_labels">
+<img src="figures/idv_snouty_all_labels.png" alt="idv snouty all labels" id="idv_snouty_all_labels_img" style="width:100%;">
+<figcaption>
+<strong>Figure A1: Instant dual-view Snouty (iDV-Snouty) light-sheet microscopy all labels.</strong>
+Here we show the iDV-Snouty light-sheet microscopy setup with all the emission path elements and some additional features labeled. We have the <strong>M1</strong> and <strong>M2</strong> microscope pair that create the <strong>remote 3D image</strong> of the sample at the output of M2, which is magnified uniformly in all directions by <strong>M<sub>RR</sub></strong>. The remote 3D image is then imaged by the <strong>M3</strong> and <strong>M4</strong> microscopes with a set <strong>tilt</strong> to create views <strong>V1</strong> and <strong>V2</strong>, which image a tilted plane in the sample. Light-sheets <strong>LS1</strong> and <strong>LS2</strong> excite the tilted image planes of V1 and V2 to create the iDV-Snouty regime. We specifically label the objectives (<strong>O1</strong>, <strong>O2</strong> and <strong>O3</strong>) and tube lenses (<strong>TL1</strong>, <strong>TL2</strong> and <strong>TL3</strong>) for reference. We also include the sample numerical aperture (<strong>NAs</strong>), and the field of view (<strong>FOV1</strong>, <strong>FOV2</strong> and <strong>FOV3</strong>) and numerical aperture (<strong>NA1</strong>, <strong>NA2</strong> and <strong>NA3</strong>) of the objectives. We show the pure lateral <strong>shift</strong> of M3 away from the optical axis of M2, which shifts the tilted image plane in the sample away from the optical axis of M1 (shift is reduced by a factor of <strong>M<sub>RR</sub></strong> at O1). We also label the optional autofocus (<strong>AF*</strong>), fold mirror (<strong>FM*</strong>) and optical scanner (<strong>OS*</strong>), and include the dichroic mirror (<strong>DM</strong>), coverslip (<strong>CS</strong>), emission filter (<strong>EM</strong>), optional location for projection galvos (<strong>PG*</strong>) and camera (<strong>C</strong>) labels.
+</figcaption>
+</figure>
+<p></p>
+
+<h4 id="o1">O1: Objective 1</h4>
+<p>
+For objective 1 we suggest a Nikon 20x1.0 water objective (<a href="./parts/mrd77226.png">MRD77226</a>) with a long 2.8 mm working distance (WD) and a 1100 &mu;m FOV1 (<a href="./parts/mrd77226_ofn22.pdf">OFN22</a>). This combination of FOV1 and NA1 results in one of the highest SBP objectives available
+[<a class="citation" href="https://doi.org/10.1515/aot-2019-0002" 
+title="Systematic design of microscope objectives. Part I: System review and analysis; Y. Zhang and H. Gross; Adv. Opt. Techn., vol 8-5, p313–347, (2019)">Zhang 2019</a>]. 
+It has coverslip correction (0&ndash;0.17 mm) which enables both coverslip and water dipping modes, and the NA1 1.0 can comfortably get 2 orthogonal views in a watery sample (48.6&deg; half angle). (This objective has 20 mm diameter BFP, a Rayleigh resolution of 0.305 &mu;m with a 500 nm wavelength, a Nyquist pixel size of 0.153 &mu;m and a FOV1 that is 7213 optical pixels wide, <a href="https://doi.org/10.5281/zenodo.14367635">equations here</a>). <a href="./cad/o1">CAD here</a>.
+</p>
+<p>
+<em>The Nikon 20x0.95 water objective alternative (<a href="./parts/mrd77205.png">MRD77205</a>) has a 0.93 mm WD and a 1250 &mu;m FOV1 (<a href="./parts/mrd77205_ofn25.png">OFN25</a>). It can only operate in coverslip mode (0.11&ndash;0.23 mm correction), and the NA1 0.95 can just barely get 2 orthogonal views in a watery sample (45.4&deg; half angle). In practice the lower NA1 may require a higher tilt angle for M3 (e.g. 50&deg;) which gives non-orthogonal views but results in a steeper light-sheet, a reduced Snouty shift and faster volumetric acquisition. In addition this objective is ‘plan’ corrected and has a larger FOV1 (~14%) which could be attractive for applications seeking to maximize a uniform FOV1. (This objective has a 19 mm diameter BFP, a Rayleigh resolution of 0.321 &mu;m with a 500 nm wavelength, a Nyquist pixel size of 0.161 &mu;m and a FOV1 that is 7787 optical pixels wide, <a href="https://doi.org/10.5281/zenodo.14367635">equations here</a>)</em>.
+</p>
+
+<h4 id="af">AF*: Autofocus</h4>
+<p>
+Hardware autofocus is highly recommended for multi-position imaging and timelapse microscopy. AF systems typically work best with coverslip samples that give a definitive reflection and are hard to implement in a dipping regime.
+</p>
+<p>
+<em>The Prior PureFocus850 (<a href="./parts/pf850.pdf">PF850</a>) is a fine option.</em>
+</p>
+
+<h4 id="fm">FM*: Fold mirror</h4>
+<p>
+A fold mirror here like a Thorlabs 2" elliptical mirror (<a href="./parts/bbe2-e02.pdf">BBE2-E02</a>) can fold the optical train into the plane of the table and most builders will want this. It can also be placed after TL1.
+</p>
+
+<h4 id="tl1">TL1: Tube lens 1</h4>
+<p>
+For tube lens 1 a Thorlabs 200 mm tube lens (<a href="./parts/ttl200mp.pdf">TTL200MP</a>) offers easy integration and is sufficient for the default 20x1.0 objective (<a href="#fig_tl1_zemax" target="_self">Figure A2</a>). Together with O1 this produces a 20x magnification at the M1 image plane.
+</p>
+<p>
+<em>To take full advantage of the 20x0.95 objective FOV1 a Nikon ‘large FOV’ 200mm tube lens may be preferable (<a href="./parts/75-379.pdf">75-379</a>).</em>
+</p>
+
+<figure id="fig_tl1_zemax">
+<img src="./zemax/tl1/thorlabs_ttl200mp_200mm_tube_lens.png" alt="thorlabs ttl200mp 200mm tube lens" id="thorlabs_ttl200mp_200mm_tube_lens_img" style="width:100%;">
+<figcaption>
+<strong>Figure A2: Zemax for a Thorlabs TTL200MP 200mm tube lens.</strong>
+Here we show spot diagrams and RMS wavefront error vs field for a Thorlabs 200mm tube lens (<a href="./parts/ttl200mp.pdf">TTL200MP</a>). We use a 20mm diameter pupil (O1 BFP) and show a 22 mm diameter diffraction limited FOV (OFN22) in the wavelength range of 450&ndash;750 nm (<a href="./zemax/tl1">Zemax here</a>). This performance is sufficient for our default choice of O1.
+</figcaption>
+</figure>
+<p></p>
+
+<h4 id="os">OS*: Optical scanner</h4>
+<p>
+For the optical scanner we opted for a synchronized dual-galvo arrangement with Thorlabs 20 mm galvos (<a href="./parts/qs20x-ag.pdf">QS20X-AG</a>) to produce an almost pure lateral scan between TL1 and TL2. The optical scanner is highly recommended since it enables the fast 3D imaging the system is well suited to realize. It can be avoided with stage scanning but this is typically slower. A dual galvo scanner offers a relatively fast and optically efficient scan, and conveniently reduces the path length of the microscope. It does however introduce a finite amount of defocus (or z-scanning effect) which can be a few &mu;m over the full FOV
+[<a class="citation" href="https://doi.org/10.1364/OPTICA.502243" 
+title="Mesoscopic oblique plane microscopy via light-sheet mirroring; S. Daetwyler, B. Chang, B. Chen, F. F. Voigt, D. Rajendran, F. Zhou and R. Fiolka; Optica, vol 1011, p1571-1581, (2023)">Daetwyler 2023</a>].
+</p>
+<p>
+<em>A lens-galvo-lens arrangement has slightly lower transmission efficiency but can have less defocus (or z-scanning effect) and using shorter focal length scan lenses can reduce the size of the galvo for an even faster scan 
+[<a class="citation" href="https://doi.org/10.5281/zenodo.3244420" 
+title="High NA single-objective light-sheet; A. Millett-Sikking, K.M. Dean, R. Fiolka, A. Fardad, L. Whitehead and A.G. York; (2019)">Millett-Sikking 2019</a>]. This may be a good option for some builders.</em>
+</p>
+
+<h4 id="tl2">TL2: Tube lens 2</h4>
+<p>
+For tube lens 2 we suggest a fixed 150mm effective focal length tube lens (<a href="./parts/efl150mm.pdf">EFL150mm</a>), which offers easy integration and is sufficient for the default and improved designs (<a href="#fig_tl2_zemax" target="_self">Figure A3</a>). Together with a Nikon 20x air objective for O2 this yields a magnification of 15x for M2, and therefore a combined M1-M2 magnification of 1.33x (i.e. M<sub>RR</sub> for a watery refractive index sample). <a href="./cad/tl2">CAD here</a>.
+</p>
+<p>
+<em>This is the location where a zoom lens could be added for dynamic correction of the remote 3D image for different sample refractive indices
+[<a class="citation" href="https://doi.org/10.5281/zenodo.7425649" title="Any immersion remote refocus (AIRR) microscopy; A. Millett-Sikking; (2022)">Millett-Sikking 2022</a>].</em>
+</p>
+
+<figure id="fig_tl2_zemax">
+<img src="./zemax/tl2/efl150mm_tube_lens_ttl200mp_act508-400-a.png" alt="efl150mm tube lens ttl200mp act508-400-a" id="efl150mm_tube_lens_ttl200mp_act508-400-a_img" style="width:100%;">
+<figcaption>
+<strong>Figure A3: Zemax for a 150mm effective focal length tube lens.</strong>
+Here we show spot diagrams and RMS wavefront error vs field for a 150mm tube lens (<a href="./parts/efl150mm.pdf">EFL150mm</a>). We use a 15mm diameter pupil (O1 BFP / 1.33x) and show a 12 mm diameter diffraction limited FOV in the wavelength range of 450&ndash;750 nm (<a href="./zemax/tl1">Zemax here</a>). A 12mm FOV equates to a 800 &mu;m diameter FOV2 (15x mag for M2) and is sufficient for our default and improved designs, where the Snouty objectives occupy at most ~680 &mu;m ( = 2 \(\times\) 129 \(\times\) 300/1.41 &mu;m) in the iDV-Snouty configuration (see <a href="#3d_fov" target="_self">3D FOV</a> for more detail).
+</figcaption>
+</figure>
+<p></p>
+
+<h4 id="dm">DM: Dichroic mirror</h4>
+<p>
+For the dichroic mirror we suggest a fixed quad line as the default (<a href="./parts/zt405488561640rpcv2.png">ZT405488561640rpcv2</a>). The infinity space between TL2 and O2 is a convenient place for coupling in the light-sheets. Placing the dichroic closer to O2 will alleviate the clear aperture requirements. Note that thinner (i.e. 1mm) dichroics are preferable to thicker ones that can perturb the infinity space and degrade the remote 3D image.
+</p>
+<p>
+<em> It's possible with a careful optomechanical design to add a dichroic slider (manual or automated) in this location and enable a wider variety of spectral options.</em>
+</p>
+
+<h4 id="o2">O2: Objective 2</h4>
+<p>
+For objective 2 we selected a Nikon 20x air objective to pair with TL2 to give a remote space magnification of 1.33x (i.e. M<sub>RR</sub> for a watery refractive index sample). The current design uses a Nikon 20x0.45 objective (<a href="./parts/mrh08230.png">MRH08230</a>) with an extra long 8.2&ndash;6.9 mm WD, a 1100 &mu;m FOV2 (<a href="./parts/mrh08230_ofn22.png">OFN22</a>) and coverslip correction (0-2 mm). The extra long WD enables iDV-Snouty with two stock ‘250 &mu;m grind’ <a href="https://doi.org/10.5281/zenodo.19596518">AMS-AGY v3</a> objectives (<a href="./index.html#fig_idv_snouty_remote_space_render">Figure 5</a>), but the NA2 0.45 limits NA1 (i.e. the sample NAs) to 0.6 (equation 4). The 0 mm setting on the correction collar is convenient for avoiding an additional coverslip and the 1100 &mu;m FOV2 is plenty for the Snouty v3 objectives (see <a href="#2d_fov" target="_self">2D FOV</a> for more detail). (This objective has a 9 mm diameter BFP, a Rayleigh resolution of 0.678 &mu;m with a 500 nm wavelength, a Nyquist pixel size of 0.339 &mu;m and a FOV2 that is 3246 optical pixels wide, <a href="https://doi.org/10.5281/zenodo.14367635">equations here</a>). <a href="./cad/o2">CAD here</a>.
+</p>
+<p>
+<strong>The improved design uses a Nikon 20x0.80 objective (<a href="./parts/mrd70270.png"><strong>MRD70270</strong></a>) with a short 0.8 mm WD, a 1250 &mu;m FOV2 (<a href="./parts/mrd70270_ofn25.png"><strong>OFN25</strong></a>) and is coverslip corrected for 0.17 mm. This option can retain the full NA1 (e.g. NA 1.0) and has a larger FOV2 (~14%), but the short working distance requires two modified <a href="./index.html#dual_grind_snouty"><strong>‘dual-grind’ AMS-AGY v3 objectives</strong></a> to avoid collision at the O2-O3 interface (<a href="./index.html#fig_idv_snouty_remote_space_render"><strong>Figure 5</strong></a>). (This objective has a 16 mm diameter BFP, a Rayleigh resolution of 0.381 &mu;m with a 500 nm wavelength, a Nyquist pixel size of 0.191 &mu;m and a FOV2 that is 6557 optical pixels wide). <a href="./cad/o2"><strong>CAD here</strong></a>.</strong>
+</p>
+
+<h4 id="cs">CS: Coverslip</h4>
+<p>
+A coverslip is not needed for the current design with the Nikon 20x0.45 O2 if the correction collar is set to the 0 mm setting.
+</p>
+<p>
+<strong>The improved design with the Nikon 20x0.8 O2 needs a 0.17 mm thick coverslip here (i.e. #1.5). This can be any high quality #1.5 coverslip (e.g. <a href="./parts/cg15nh1.pdf"><strong>CG15NH1</strong></a>) but holding it in place with glue or mechanics can be tricky for an inexperienced builder. <a href="https://www.asiimaging.com/"><strong>ASI</strong></a> can glue a coverslip onto O2 as a service if this step is problematic.</strong>
+</p>
+
+<h4 id="o3">O3: Objective 3</h4>
+<p>
+For objective 3 (Snouty) we chose the ‘250 &mu;m grind’ <a href="https://doi.org/10.5281/zenodo.19596518">AMS-AGY v3</a> objective with NA3 0.99, an ultra short 5 &mu;m WD, 7.2mm EFL and a 425 \(\times\) 600 &mu;m diffraction limited (DL) FOV3. The asymmetric FOV3 is optically limited to 125 &mu;m in 1 direction by a mechanical grind that is 160 &mu;m from the optical axis. In the iDV mode the Snouty objectives are arranged in a non-traditional way so that their ground edges are almost touching (<a href="./index.html#fig_idv_snouty_remote_space_render">Figure 5</a>), with a small <a href="#o3_o4_air_gap" target="_self">O3-O4 air gap</a> between them (e.g. ~30 &mu;m). Minimizing the air gap is important for maximizing the acquisition rate boost (equation 13). This arrangement places the bulk of the glass tip towards O2 where an extra long working distance is needed to avoid mechanical collision (<a href="./index.html#fig_idv_snouty_remote_space_render">Figure 5</a>). (This objective has a 14.25mm diameter BFP, a Rayleigh resolution of 0.308 &mu;m with a 500 nm wavelength, a Nyquist pixel size of 0.154 &mu;m and a FOV3 that is 2759 \(\times\) 3895 optical pixels wide, <a href="https://doi.org/10.5281/zenodo.14367635">equations here</a>).
+</p>
+<p>
+<strong>The improved design uses a modified <a href="./index.html#dual_grind_snouty"><strong>‘dual-grind’ AMS-AGY v3 objective</strong></a> where the glass that is protruding towards O2 has been removed. This enables the improved choice for O2 (<a href="./index.html#fig_idv_snouty_remote_space_render"><strong>Figure 5</strong></a>) and retains the maximum NA1 (e.g. NA 1.0). This new version could have a ‘250 μm grind’ on one side and a ‘900 μm grind’ on the other side, effectively replacing the current <a href="https://doi.org/10.5281/zenodo.19596518"><strong>AMS-AGY v3</strong></a> offerings. This results in a single unified 'dual-grind' AMS-AGY v3 design that can be used for high NA single-view, low NA single-view and dual-view systems (<a href="#fig_o3_cad_dual_grind" target="_self"><strong>Figure A4</strong></a>). <a href="./cad/o3"><strong>CAD here</strong></a>.</strong>
+</p>
+
+<figure id="fig_o3_cad_dual_grind">
+<img src="./cad/o3/ams-agy_v3_57-14-7_revb_dual_grind_cropped.png" alt="ams-agy v3 57-14-7 revb dual grind cropped" id="ams-agy_v3_57-14-7_revb_dual_grind_cropped_img" style="width:100%;">
+<figcaption>
+<strong>Figure A4: 2D drawing of the newly proposed ‘dual-grind’ AMS-AGY v3 objective.</strong>
+Here we show a <a href="./cad/o3/ams-agy_v3_57-14-7_revb_dual_grind.pdf">2D drawing</a> of the newly proposed ‘dual-grind’ AMS-AGY v3 objective. The design fuses the current ‘250 μm grind’ and a ‘900 μm grind’ offerings for the <a href="https://doi.org/10.5281/zenodo.19596518">AMS-AGY v3</a> objective into a single design, with a ‘250 μm grind’ on one side and a ‘900 μm grind’ on the opposing side (both with a 55&deg; grind angle). This results in a single unified 'dual-grind' AMS-AGY v3 design that can be used for high NA single-view, low NA single-view and dual-view systems (<a href="./cad/o3">CAD here</a>).
+</figcaption>
+</figure>
+<p></p>
+
+<h4 id="em">EM: Emission filter</h4>
+<p>
+For the emission filter we suggest a fixed quad band as the default (<a href="./parts/zet405488561640mv2.png">ZET405488561640mv2</a>). The infinity space between O3 and TL3 is a convenient location.
+</p>
+<p>
+<em>A fast filter wheel with different filter options can be a good addition here for spectral flexibility. The Sutter Instruments Lambda 10-3 is a fine option (<a href="./parts/lambda10-3.pdf">Lambda10-3</a>).</em>
+</p>
+
+<h4 id="tl3">TL3: Tube lens 3</h4>
+<p>
+For tube lens 3 a Thorlabs 180mm tube lens (<a href="./parts/ttl180-a.pdf">TTL180-A</a>) is a reasonable choice to pair with O3 and gives an M3 magnification of 25x. The proposed camera pixel sizes are in the 4.5&ndash;4.6 &mu;m range which at 25x equates to a pixel size of 0.180&ndash;0.184 &mu;m at O3. This is a good match for the Nyquist pixel size of O2 in the improved design (0.191 &mu;m) and can work with the current design (0.339 &mu;m) with 2x2 binning (i.e. 0.360&ndash;0.368 &mu;m). With a 14.25 mm diameter pupil (<a href="https://doi.org/10.5281/zenodo.19596518">AMS-AGY v3</a> BFP) the TTL180-A can comfortably image a 23 mm diameter FOV which is enough for both camera options (<a href="#fig_tl3_zemax" target="_self">Figure A5</a>). The default camera is size is 20.314 \(\times\) 10.893 mm which at 25x equates to a 813 \(\times\) 436 &mu;m FOV3.
+</p>
+<p>
+<em>To explore an even larger FOV we can use the <a href="./parts/efl150mm.pdf">EFL150mm</a> tube lens to give an M3 magnification of 20.83x, which equates to a nominal 1106 \(\times\) 885 &mu;m FOV3 with the large format 23.040 \(\times\) 18.432 mm alternative camera (see <a href="#3d_fov" target="_self">3D FOV</a> for more detail).</em>
+</p>
+
+<figure id="fig_tl3_zemax">
+<img src="./zemax/tl3/thorlabs_ttl180-a_bb_forward.png" alt="thorlabs ttl180-a bb forward" id="thorlabs_ttl180-a_bb_forward_img" style="width:100%;">
+<figcaption>
+<strong>Figure A5: Zemax for a Thorlabs TTL180-A 180mm tube lens.</strong>
+Here we show spot diagrams and RMS wavefront error vs field for a Thorlabs 180mm tube lens (<a href="./parts/ttl180-a.pdf">TTL180-A</a>). We use a 14.25 mm diameter pupil (<a href="https://doi.org/10.5281/zenodo.19596518">AMS-AGY v3</a> BFP) and show a 23 mm diameter diffraction limited FOV in the wavelength range of 450&ndash;750 nm (<a href="./zemax/tl3">Zemax here</a>). This performance is sufficient for both camera options.
+</figcaption>
+</figure>
+<p></p>
+
+<h4 id="pg">PG*: Projection galvos</h4>
+<p>
+Projection galvos offer an opportunity to optically shear the image (i.e. shift the image laterally) just before the camera. If the optical shear is calibrated correctly, and running during a scan with the primary optical scanner (OS), then 2D sum projection images of the 3D sample can be acquired with a single camera exposure
+[<a class="citation" href="https://doi.org/10.1038/s41592-021-01175-7" 
+title="Real-time multi-angle projection imaging of biological dynamics; 
+B. Chang, J.D. Manton, E. Sapoznik, T. Pohlkamp, T.S. Terrones, E.S. Welf, V.S. Murali, P. Roudot, K. Hake, 
+L. Whitehead, A.G. York, K.M. Dean and R.P. Fiolka; 
+(2021)">Chang 2021</a>]. 
+Adjusting the shear rate of the projection galvos (relative to the primary optical scanner) then allows for projections at arbitrary angles and can be attractive for ultra-fast imaging of sparse 3D objects. Here the iDV mode enables 2 projections to be acquired simultaneously, potentially giving all of the necessary information for a 3D sample in a single scan.
+</p>
+
+<h4 id="c">C: Camera</h4>
+<p>
+For the default camera we suggest the Excelitas sCMOS (<a href="./parts/pco_edge10_bi_clhs.pdf">pco.edge 10 bi CLHS</a>). It has a rolling shutter with 4416 \(\times\) 2368 square pixels that are 4.6 &mu;m wide (i.e. 20.314 \(\times\) 10.893 mm). The M3 magnification is 25x so we can explore a 813 \(\times\) 436 &mu;m FOV3, or a 610 \(\times\) 327 &mu;m FOV1 in the sample (reduced by a factor of M<sub>RR</sub>). The 4.6 &mu;m pixels are 0.184 &mu;m at O3, which is a good match for the improved design (0.191 &mu;m target) and can be used with the current design (0.339 &mu;m target) with 2x2 binning to get 0.368 &mu;m pixels. The high pixel rate (1.47 GPixel/s) can be leveraged with high laser power and fast triggering to give very high frames rates (e.g. 557fps with 4416 \(\times\) 512 pixels) and therefore a high 3D acquisition rate. The high peak quantum efficiency (85%) and low read noise (1.3e- rms) should be good for many applications. The rolling shutter is not blind to light before exposure and during readout which could result in ‘cross talk’ between the 2 views when imaging in a deep regime (<a href="./index.html#fig_idv_snouty_axial_sample_position">Figure 4</a>).
+</p>
+<p>
+<em>For a larger FOV and deeper imaging a larger sensor with a global shutter like the Tucsen sCMOS camera (<a href="./parts/dhyana_2100.pdf">Dhyana 2100</a>) could be attractive.</em>
+</p>
+
+<h3 id="system_level_considerations">System level considerations</h3>
+<p>
+Here we discuss some of the important system level considerations and specifications.
+</p>
+
+<h4 id="immersion">Immersion</h4>
+<p>
+We opted for <strong>water</strong> immersion objectives for O1 since they are available with high NA (i.e. ~1.0) and mm scale fields of view (i.e. 20x). Water immersion is typically well matched for the refractive index of live biological samples where light-sheet microscopy is most relevant and in this regime we can use standard focus and remote refocus together for extra focal range
+[<a class="citation" href="https://doi.org/10.5281/zenodo.7425649" title="Any immersion remote refocus (AIRR) microscopy; A. Millett-Sikking; (2022)">Millett-Sikking 2022</a>]
+. Water immersion is also well behaved with lens hydration schemes (i.e. pumps etc) that may be needed for multi-position or timelapse imaging and is easily cleaned away from the objective and sample. Given this choice the magnification of the remote space (M<sub>RR</sub>) is set to the refractive index of water (1.33).
+</p>
+
+<h4 id="tilt_angle">Tilt angle</h4>
+<p>
+For the default Nikon 20x1.0 water objective we suggest a tilt angle of <strong>45&deg;</strong> to give orthogonal dual-views (<a href="./index.html#fig_idv_snouty">Figure 1</a>). This is close to the <a href="https://doi.org/10.5281/zenodo.14368215">optimum tilt</a> angle for this objective and offers ample flexibility on the choice of light-sheet parameters. The <a href="https://doi.org/10.5281/zenodo.19596518">AMS-AGY v3</a> objectives have a 55&deg; grind angle and can therefore accommodate a low 35&deg; tilt before they collide in the dual-view mode (<a href="./index.html#fig_idv_snouty_remote_space_render">Figure 5</a> with the O3-O4 bodies in contact). This allows for shallow light-sheets if needed, or alternatively, arbitrarily high tilt angles can also be chosen for steep light-sheets but with diminishing returns on <a href="https://doi.org/10.5281/zenodo.14344126">transmission efficiency</a>
+[<a class="citation" href="https://doi.org/10.1038/s41598-024-53900-9" 
+title="S-polarized light-sheets improve resolution and light-efficiency in oblique plane microscopy; 
+J. R. Sommernes, A. Millett-Sikking and F. Ströhl; Sci. Rep., vol 14, p3540, (2024)">Sommernes 2024</a>].
+</p>
+<p>
+<em>For the alternative Nikon 20x0.95 water objective a slightly steeper tilt angle like <strong>~48&deg;</strong> may be needed due to the lower NA.</em>
+</p>
+
+<h4 id="light_sheet_options">Light-sheet options</h4>
+<p>
+A concrete design is not provided here but some general <a href="https://doi.org/10.5281/zenodo.14369515">excitation considerations</a> and specific implementations on a <a href="https://doi.org/10.5281/zenodo.20415155">similar platform</a> have been shared previously 
+[<a class="citation" href="https://doi.org/10.1364/BOE.467969" 
+title="Increasing the Field-of-View in Oblique Plane Microscopy via optical tiling; B. Chen, B. Chang, F. Zhou, S. Daetwyler, E. Sapoznik, G.M. Gihana, L.P. Castro, M.C. Sorrell, K.M. Dean, A. Millett-Sikking, A.G. York and R.P. Fiolka; Biomed. Opt. Express, Vol 13, p5616-5627, (2022)">Chen 2022</a>, 
+<a class="citation" href="https://doi.org/10.1101/2025.10.04.680473" 
+title="Multi-immersion Oblique Plane Microscope (miOPM): A reconfigurable platform for high-resolution Light-Sheet Fluorescence Microscopy; B. Chen, A. Millett-Sikking, S. Gałecki, S. Daetwyler, J. Jiou, J. Monistrol, Q. Shen, F. Zhou, H. Lin, E. Jenkins, M. C. Stein, M. Marlar-Pavey, G. Sturm, A. L. Li, Q. Tang, B. Feng, U. Diaz, Y. Chen, A. Shalizi, A. Gillich, J. R. Friedman, R. Tomer, B. Chang, W. F. Marshall, S. Shahmoradian, K. M. Dean and R. Fiolka; bioRxiv, ID 2025.10.04.680473, (2025)">Chen 2025</a>]
+. Recommendations include ~100 mW or more laser power per line, using a Powell and cylindrical lens combination for efficient line generation, followed by an achromatic cylindrical lens to create a light-sheet that can be relayed to O1. Large amplitude gimbal mirrors in conjugate image and back focal planes are helpful for macroscopic alignment of the light-sheet to the tilted image plane at O1. Electronically controlled galvos (or similar) in conjugate image and back focal planes are helpful for fine tuning the light-sheet position on a per sample basis in software. These can also be used to homogenize illumination and suppress streaking and shadowing artifacts by dithering and shaking the light-sheet (i.e. high frequency small amplitude lateral and angular translations during image capture).
+</p>
+
+<h4 id="o3_o4_air_gap">O3-O4 air gap</h4>
+<p>
+If room temperature is maintained to within &plusmn;5&deg;C then a <strong>30 &mu;m</strong> air gap between the Snouty objectives should be plenty to avoid collision from <a href="https://doi.org/10.5281/zenodo.14343608">thermal expansion</a> (i.e. 15 &mu;m per objective). This can be further alleviated with active 
+[<a class="citation" href="https://doi.org/10.1101/2025.10.04.680473" 
+title="Active remote focus stabilization in oblique plane microscopy; T. D. Nguyen, A. Rahmani, A. Ponjavic, A. Millett-Sikking and R. Fiolka; Biomed. Opt. Express, vol 16, p1216-1224, (2025)">Nguyen 2025</a>] 
+or <a href="https://doi.org/10.5281/zenodo.20413763">passive temperature stabilization</a> which is highly recommended. 30 &mu;m is about the thickness of a standard piece of Thorlabs lens tissue (MC-5). With the O3-O4 ground glass edges pinching the lens tissue the separation will be about 20 &mu;m, releasing the lens tissue will give something like a 30 &mu;m gap (<a href="#fig_thorlabs_lens_tissue" target="_self">Figure A6</a>).
+</p>
+
+<figure id="fig_thorlabs_lens_tissue">
+<img src="./figures/thorlabs_lens_tissue.jpg" alt="thorlabs lens tissue" id="thorlabs_lens_tissue_img" style="width:100%;">
+<figcaption>
+<strong>Figure A6: Thorlabs lens tissue MC-5 thickness.</strong>
+Here we show the measured thickness of Thorlabs lens tissue (MC-5) at about 20&ndash;30 &mu;m . With the calipers adjusted to 20 &mu;m the tissue is pinched in place, at 30 &mu;m it will slide out.
+</figcaption>
+</figure>
+<p></p>
+
+<h4 id="2d_fov">2D FOV</h4>
+<p>
+Before considering the 3D FOV it can be helpful to first consider the 2D FOV limits for an iDV-Snouty where M1, M2, M3 and M4 are all axially aligned (even if M3 and M4 would collide in practice). Both choices of O1 give a large FOV1 (1100&ndash;1250 &mu;m) and so we would need an extra large FOV2 (1467&ndash;1667 &mu;m) to capture the full field in the remote space at O2 (equation 9 with M<sub>RR</sub> at 1.33x). In practice our O2 options limit FOV2 to 1100&ndash;1250 &mu;m, but this is still enough to comfortably fit 2 views from the ‘250 &mu;m grind’ <a href="https://doi.org/10.5281/zenodo.19596518">AMS-AGY v3</a> objective in an axially aligned setup (<a href="#fig_idv_snouty_current_design_2d_fov" target="_self">Figure A7</a>). Specifically, if we take the grind distance (160 &mu;m) with the air gap per objective (15 &mu;m) and half the optical FOV (300 &mu;m) then this totals 950 &mu;m for 2 views (i.e. well within FOV2). So we can see that in the 2D case (i.e. without tilting) we can <strong>double</strong> the FOV of a single view Snouty light-sheet microscope.
+</p>
+
+<figure id="fig_idv_snouty_current_design_2d_fov">
+<img src="./figures/idv_snouty_current_design_2d_fov.png" alt="idv snouty current design 2d fov" id="idv_snouty_current_design_2d_fov_img" style="width:100%;">
+<figcaption>
+<strong>Figure A7: 2D drawing of the 2D FOV in the remote space in the current iDV-Snouty design (no tilt).</strong>
+Here we show a <a href="./cad/2d_fov/2d_fov.pdf">2D drawing</a> of the 2D FOV (i.e. no tilting) in the remote space with <strong>FOV2</strong>, <strong>FOV3</strong> and <strong>FOV4</strong>. With a <strong>30 &mu;m</strong> air gap we can see that FOV3 and FOV4 extend to a maximum of <strong>950 &mu;m</strong> and readily fit within FOV2 which is <strong>1100 &mu;m</strong> in the current design (and 1250 &mu;m in the improved design). Here the FOV3 and FOV4 diffraction limit boundaries are based on the ‘250 &mu;m grind’ <a href="https://doi.org/10.5281/zenodo.19596518">AMS-AGY v3</a> objective and are the same for the newly proposed <a href="./index.html#dual_grind_snouty">‘dual-grind’ AMS-AGY v3 objective</a> (the objectives differ mechanically but are optically identical).
+</figcaption>
+</figure>
+<p></p>
+
+<h4 id="3d_fov">3D FOV</h4>
+<p>
+The M1-M2 pair produce a remote 3D volume at O2 with a diffraction limited range that typically has an ellipsoid shape, with an aspect ratio that is wider laterally than axially at high NA. Here the lateral range of the remote 3D volume is limited by O2 to 1100 &mu;m in the current design (<a href="#fig_idv_snouty_current_design_3d_fov_detail" target="_self">Figure A8</a>) and 1250 &mu;m in the improved design (<a href="./index.html#fig_idv_snouty_improved_design_3d_fov_detail">Figure 7</a>). To estimate the axial range in both designs we can first estimate the range at O1 for the default Nikon 20x1.0 water objective which is <a href="./figures/rr_depth.py">&plusmn;182 &mu;m</a>
+[<a class="citation" href="https://doi.org/10.5281/zenodo.7425649" title="Any immersion remote refocus (AIRR) microscopy; A. Millett-Sikking; (2022)">Millett-Sikking 2022</a>, equation a10]. For the remote space range we can then magnify by M<sub>RR</sub> at 1.33x to get a range of &plusmn;242 &mu;m or 484 &mu;m total.
+</p>
+<p>
+To first order the <a href="https://doi.org/10.5281/zenodo.19596518">AMS-AGY v3</a> objective has a maximum optical FOV of &plusmn;300 &mu;m, which equates to &plusmn;212 &mu;m axially with a 45&deg; tilt. So before considering the grind or any lateral shifting we can see that the Snouty axial FOV (&plusmn;212 &mu;m at 45&deg;) is within the axial range of the remote refocus (&plusmn;242 &mu;m). This is a good starting point since we are fully utilizing the Snouty FOV to collect axial information with some extra axial range still available in the remote 3D volume.
+</p>
+<p>
+In practice the '250&mu;m grind' on the  <a href="https://doi.org/10.5281/zenodo.19596518">AMS-AGY v3</a> objective and the '250&mu;m grind' on the newly proposed <a href="./index.html#dual_grind_snouty">‘dual-grind’ AMS-AGY v3 objective</a> is 160 &mu;m from the optical axis (2D drawings <a href="./parts/57-14-7.pdf">here</a> and <a href="./cad/o3/ams-agy_v3_57-14-7_revb_dual_grind.pdf">here</a>). This limits the diffraction limited FOV to 125 &mu;m in 1 direction and 300 &mu;m in the other, so the total FOV is only 425 &mu;m in the grind limited direction. If we now assume an iDV-Snouty arrangement with a 45&deg; tilt and a 30 &mu;m air gap between the Snouty objectives we can see from the <a href="./cad/current_design/idv_snouty_current_design.pdf">2D drawing</a> that even with the ~129 &mu;m Snouty shift that the Snouty FOV remains essentially within the remote 3D volume (<a href="#fig_idv_snouty_current_design_3d_fov_detail" target="_self">Figure A8</a>, <a href="./index.html#fig_idv_snouty_improved_design_3d_fov_detail">Figure 7</a>). This is a good practical result where we can see that the iDV-Snouty arrangement is doubling the available FOV (similar to the <a href="#2d_fov" target="_self">2D FOV</a> but with the tilt included).
+</p>
+
+<figure id="fig_idv_snouty_current_design_3d_fov_detail">
+<img src="./figures/idv_snouty_current_design_3d_fov_detail.png" alt="idv snouty current design 3d fov detail" id="idv_snouty_current_design_3d_fov_detail_img" style="width:100%;">
+<figcaption>
+<strong>Figure A8: 2D drawing of the remote space in the current iDV-Snouty design (NA 0.6).</strong>
+Here we show a detail view of the remote space from the <a href="./cad/current_design/idv_snouty_current_design.pdf">2D drawing</a> of the current iDV-Snouty design (NA 0.6). We have an elliptical <strong>remote 3D volume</strong> that is <strong>1100 &mu;m</strong> laterally (XY) and <strong>484 &mu;m</strong> axially (Z).  We show <strong>FOV4</strong> at <strong>425 &mu;m</strong> which is <strong>grind limited</strong> to <strong>125 &mu;m</strong> from the <strong>O4 optical axis</strong> in 1 direction and optically limited to <strong>300 &mu;m</strong> in the opposite direction by the boundary of the <strong>diffraction limited</strong> Snouty FOV. We show the <strong>grind edge</strong> at <strong>160 &mu;m</strong> and a <strong>30 &mu;m air gap</strong> between the Snouty objectives (<strong>O3</strong> and <strong>O4</strong>). The Snouty objectives are symmetric about the <strong>O2 optical axis</strong> with a 45&deg; tilt. The sum of the air gap per objective (15 &mu;m) and the 160 &mu;m grind edge (~113 &mu;m at 45&deg;) gives the required <strong>Snouty shift</strong> of <strong>~129&mu;m</strong>.
+</figcaption>
+</figure>
+<p></p>
+
+<p>
+We can now evaluate the size of the iDV-Snouty 3D FOV. For each Snouty in the remote space (O3 and O4) we have a total FOV that is 425 &mu;m in the grind limited (light-sheet propagation) direction, but still 600&mu;m in the non grind limited (light-sheet width) direction. So de-magnifying back to the sample space at O1 by 1.33x we have an expected FOV in 'light-sheet co-ordinates' that is 450 \(\times\) 319 &mu;m (width \(\times\) propagation). We can scan O1 up to the limits of FOV1 which is 1100 &mu;m in the default design and we have 2 instant views, which gives a total 3D FOV of 450 \(\times\) 1100 \(\times\) 319 &mu;m (width \(\times\) scan \(\times\) propagation) \(\times\) 2 views. Converting to 'traditional Cartesian co-ordinates' with a 45&deg; tilt equates to <strong>450 \(\times\) 1100 \(\times\) 225 &mu;m (X \(\times\) Y \(\times\) Z) \(\times\) 2 views</strong>.
+</p>
+<p>
+So far we have only considered the diffraction limited FOV but we can look beyond this up to the limits of the camera chip. The default camera is 20.314 mm \(\times\) 10.893 mm, which is 813 \(\times\) 436 &mu;m (width \(\times\) propagation) at FOV3 with an M3 magnification of 25x. On this basis we can explore the sample up to 609 \(\times\) 1100 \(\times\) 327 &mu;m (width \(\times\) scan \(\times\) propagation) \(\times\) 2 views or 609 \(\times\) 1100 \(\times\) 231 &mu;m (X \(\times\) Y \(\times\) Z) \(\times\) 2 views.
+</p>
+<p>
+In practice the usable FOV may be reduced by refraction, scattering and absorption of the light-sheet or emission light from the sample or non-ideal behaviour from the optical system.
+</p>
+
+<h4 id="3d_fov_non_dl">3D FOV non diffraction limited</h4>
+<p>
+So far we have restricted ourselves to preserving resolution and retaining the diffraction limited (DL) FOV, and at most exploring some of the non DL FOV with the edges of the camera chip. However for some applications it may make sense to trade resolution for FOV more directly. For example we can use a larger chip like the Tucsen sCMOS camera (<a href="./parts/dhyana_2100.pdf">Dhyana 2100</a>) that is 23.040 \(\times\) 18.432 mm or use a shorter tube lens like the <a href="./parts/efl150mm.pdf">EFL150mm</a> to reduce the M3 magnificationt to ~20.83x.
+</p>
+<p>
+In principle this gives a 1106 \(\times\) 885 &mu;m FOV3, but in practice the 885 &mu;m is limited by the 'dual-grind' to 575 &mu;m (<a href="./index.html#fig_idv_snouty_improved_design_3d_fov_detail">Figure 7</a>). So de-magnifying back to the sample space at O1 by 1.33x gives 830 \(\times\) 432 &mu;m (width \(\times\) propagation). Including the O1 scan and the 2 views then equates to 830 \(\times\) 1100 \(\times\) 432 &mu;m (width \(\times\) scan \(\times\) propagation) \(\times\) 2 views or <strong>830 \(\times\) 1100 \(\times\) 306 &mu;m (X \(\times\) Y \(\times\) Z) \(\times\) 2 views</strong>.
+</p>
+<p>
+The lower M3 magnification means that the 4.5 &mu;m pixels will be oversized for Nyquist (i.e. 0.216 &mu;m vs 0.191 &mu;m target) which will slightly lower the resolution. A similar approach was used in DaXi [<a class="citation" href="https://doi.org/10.1038/s41592-022-01417-2" 
+title="DaXi—high-resolution, large imaging volume and multi-view single-objective light-sheet microscopy; B. Yang, M. Lange, A. Millett-Sikking, X. Zhao, J. Bragantini, S. VijayKumar, M. Kamb, R. Gómez-Sjöberg, A.C. Solak, W. Wang, H. Kobayashi, M.N. McCarroll, L.W. Whitehead, R.P. Fiolka, T.B. Kornberg, A.G. York and L.A. Royer; Nat. Methods, vol 19, p461–469, (2022)">Yang 2022</a>].
+</p>
+
+<h4 id="3d_acquisition_rate_boost">3D acquisition rate boost</h4>
+<p>
+If we assume an iDV-Snouty arrangement with a 45&deg; tilt and a 30 &mu;m air gap between the Snouty objectives then this results in a Snouty shift (equation 12) of ~129&mu;m (<a href="#fig_idv_snouty_current_design_3d_fov_detail" target="_self">Figure A8</a>, <a href="./index.html#fig_idv_snouty_improved_design_3d_fov_detail">Figure 7</a>). We can calculate this directly by adding the 160 &mu;m at 45&deg; (~113 &mu;m) to the air gap per objective (15 &mu;m). FOV1 is at least 1100 &mu;m (depending on the choice of O1) and we have a remote magnification (M<sub>RR</sub>) of 1.33x so from equation 13 we can expect a 3D acquisition rate boost of at least <strong>1.7</strong>.
+</p>
+<p>
+The 3D acquisition rate boost can be increased further with a larger FOV1, a more aggressive grind on the Snouty objectives and a smaller air gap.
+</p>
+
+</section>
+<footer>
+  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+  <img alt="Creative Commons License" style="border-width:0" src="./images/cc_by_4p0.png"></a>
+
+  <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a></small></p>
+</footer>
+</div>
+ <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+</body>
+</html>
