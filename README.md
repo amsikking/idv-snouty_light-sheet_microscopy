@@ -1,7 +1,7 @@
 # Instant dual-view Snouty (iDV-Snouty) light-sheet microscopy
 
-A scientific publication that describes a new approach for instant dual-view Snouty (iDV-Snouty) light-sheet microscopy. This repository 
-hosts everything you need to reproduce our results. Read the publication here:
+A scientific publication that describes a new approach to dual-view light-sheet microscopy. This repository 
+hosts all the publication materials. Read the publication here:
 
 https://amsikking.github.io/idv-snouty_light-sheet_microscopy
 
