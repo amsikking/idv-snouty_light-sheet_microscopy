@@ -1,5 +1,7 @@
 # Instant dual-view Snouty (iDV-Snouty) light-sheet microscopy
 
+<a href="https://doi.org/10.5281/zenodo.21457037"><img src="https://img.shields.io/badge/DOI-10.5281/zenodo.21457037-blue.svg" alt="DOI"></a>
+
 A scientific publication that describes a new approach to dual-view light-sheet microscopy. This repository 
 hosts all the publication materials. Read the publication here:
 
