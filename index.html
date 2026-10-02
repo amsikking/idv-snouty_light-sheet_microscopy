@@ -177,7 +177,7 @@ This figure shows the <strong>M1</strong> and <strong>M2</strong> microscope pai
 iDV-Snouty light-sheet microscopy is a straightforward concept; take a regular Snouty light-sheet microscope
 [<a class="citation" href="https://doi.org/10.5281/zenodo.3244420" 
 title="High NA single-objective light-sheet; A. Millett-Sikking, K.M. Dean, R. Fiolka, A. Fardad, L. Whitehead and A.G. York; (2019)">Millett-Sikking 2019</a>]
-and duplicate the 3rd microscope (M3) to create a 4th microscope (M4) which shares the remote 3D image produced by the first 2 microscopes (M1 and M2). M3 and M4 can each image a tilted plane in the sample simultaneously and dual light-sheets can be simultaneously delivered on these image planes (<a href="#fig_iDV_Snouty" target="_self">Figure 1</a>). The rest of this section explores how this arrangement can work and how to optimize it, with subsections on <a href="#single_view_snouty_basics" target="_self">single-view Snouty basics</a>, <a href="#choosing_O1" target="_self">choosing the primary objective (O1)</a>, <a href="#constraints_on_na" target="_self">constraints on numerical aperture (NA)</a>, <a href="#preserving_sbp" target="_self">preserving space-bandwidth product (SBP)</a>, <a href="#constraints_on_fov" target="_self">constraints on field of view (FOV)</a>, <a href="#lateral_shift_for_dv" target="_self">lateral shift for dual-view</a>, <a href="#3d_acquisition_rate_boost" target="_self">3D acquisition rate boost</a> and <a href="#axial_sample_position_regimes" target="_self">axial sample position regimes</a>.
+and duplicate the 3rd microscope (M3) to create a 4th microscope (M4) which shares the remote 3D image produced by the first 2 microscopes (M1 and M2). M3 and M4 can each image a tilted plane in the sample simultaneously and dual light-sheets can be simultaneously delivered on these image planes (<a href="#fig_idv_snouty" target="_self">Figure 1</a>). The rest of this section explores how this arrangement can work and how to optimize it, with subsections on <a href="#single_view_snouty_basics" target="_self">single-view Snouty basics</a>, <a href="#choosing_O1" target="_self">choosing the primary objective (O1)</a>, <a href="#constraints_on_na" target="_self">constraints on numerical aperture (NA)</a>, <a href="#preserving_sbp" target="_self">preserving space-bandwidth product (SBP)</a>, <a href="#constraints_on_fov" target="_self">constraints on field of view (FOV)</a>, <a href="#lateral_shift_for_dv" target="_self">lateral shift for dual-view</a>, <a href="#3d_acquisition_rate_boost" target="_self">3D acquisition rate boost</a> and <a href="#axial_sample_position_regimes" target="_self">axial sample position regimes</a>.
 </p>
 <p>
 More practically minded readers can skip the theory and go straight to the <a href="#example_design" target="_self">example design</a>.
@@ -207,7 +207,7 @@ This figure shows a regular single-view Snouty light-sheet microscope with view 
 <p></p>
 
 <p>
-M1 and M2 share the same optical axis, but M3 is intentionally tilted with respect to M2 so that it images a tilted plane in the remote 3D space, and therefore a tilted plane in the sample at O1 (<a href="#fig_iDV_Snouty" target="_self">Figure 1</a>). The tilt angle between M2 and M3 must be set high enough so that the tilted plane in the sample is within the angular range of O1, which then enables a light-sheet to be coupled into O1 and made coincident with the tilted plane. The role of the Snouty objective is to allow the tilt operation between M2 and M3 (and therefore between O2 and O3) with minimal loss of light.
+M1 and M2 share the same optical axis, but M3 is intentionally tilted with respect to M2 so that it images a tilted plane in the remote 3D space, and therefore a tilted plane in the sample at O1 (<a href="#fig_idv_snouty" target="_self">Figure 1</a>). The tilt angle between M2 and M3 must be set high enough so that the tilted plane in the sample is within the angular range of O1, which then enables a light-sheet to be coupled into O1 and made coincident with the tilted plane. The role of the Snouty objective is to allow the tilt operation between M2 and M3 (and therefore between O2 and O3) with minimal loss of light.
 </p>
 
 <h4 id="choosing_O1">Choosing the primary objective (O1)</h4>
@@ -321,7 +321,7 @@ This figure shows a single-view Snouty light-sheet microscope with a pure latera
 <p></p>
 
 <p>
-So the key realizations here are that FOV2 has extra space, O3 can shift laterally to make more space, and that we can use the extra space to add a 4th Snouty objective (O4) and a 4th microscope (M4). M3 and M4 can both view the remote 3D image simultaneously from different directions in a dual-view regime. The 2 views are ‘instant’ and can be excited by 2 light-sheets coupled into O1. We call this new mode instant dual-view Snouty (iDV-Snouty) light-sheet microscopy (<a href="#fig_iDV_Snouty" target="_self">Figure 1</a>).
+So the key realizations here are that FOV2 has extra space, O3 can shift laterally to make more space, and that we can use the extra space to add a 4th Snouty objective (O4) and a 4th microscope (M4). M3 and M4 can both view the remote 3D image simultaneously from different directions in a dual-view regime. The 2 views are ‘instant’ and can be excited by 2 light-sheets coupled into O1. We call this new mode instant dual-view Snouty (iDV-Snouty) light-sheet microscopy (<a href="#fig_idv_snouty" target="_self">Figure 1</a>).
 </p>
 
 <h4 id="3d_acquisition_rate_boost">3D acquisition rate boost</h4>
@@ -514,7 +514,7 @@ We also include a discussion of some of the important <a href="./appendix.html#s
 
 <h4 id="dual_grind_snouty">Dual-grind AMS-AGY v3 objective</h4>
 <p>
-The newly proposed ‘dual-grind’ AMS-AGY v3 objective (<a href="#fig_iDV_Snouty_remote_space_render" target="_self">Figure 6</a>) is essential for enabling the improved iDV-Snouty design with an uncompromised system NA of 1.0. The dual-grind tip is a straightforward modification to the existing ‘250 &mu;m grind’ tip that involves grinding the other side down in a similar way to the existing grind. For example, a ‘250 &mu;m grind’ on one side and a ‘900 &mu;m grind’ (already an option) on the opposing side would be acceptable (<a href="./cad/o3/ams-agy_v3_57-14-7_revb_dual_grind.pdf">2D drawing here</a>).
+The newly proposed ‘dual-grind’ AMS-AGY v3 objective (<a href="#fig_dual_grind_snouty" target="_self">Figure 6</a>) is essential for enabling the improved iDV-Snouty design with an uncompromised system NA of 1.0. The dual-grind tip is a straightforward modification to the existing ‘250 &mu;m grind’ tip that involves grinding the other side down in a similar way to the existing grind. For example, a ‘250 &mu;m grind’ on one side and a ‘900 &mu;m grind’ (already an option) on the opposing side would be acceptable (<a href="./cad/o3/ams-agy_v3_57-14-7_revb_dual_grind.pdf">2D drawing here</a>).
 </p>
 <p>
 The 'dual-grind' AMS-AGY v3 objective could replace the current ‘250 &mu;m grind’ and ‘900 &mu;m grind’ versions, resulting in a single unified design for high NA single-view, low NA single-view and dual-view systems.
